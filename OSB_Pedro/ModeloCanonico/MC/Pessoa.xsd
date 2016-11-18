@@ -6,7 +6,7 @@
 			<element name="id" type="integer"/>
 			<element name="nome" type="string"/>
 			<element name="dataNascimento" type="date"/>
-			<element name="cnpj" type="string"/>
+			<element name="cpf" type="string"/>
 			<element name="telefone" type="integer"/>
 		</sequence>	
 	</complexType>

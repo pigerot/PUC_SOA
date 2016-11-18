@@ -1,0 +1,17 @@
+xquery version "1.0" encoding "UTF-8";
+(:: pragma bea:global-element-parameter parameter="$parametrosVerificaCreditoExterno1" element="ns2:parametrosVerificaCreditoExterno" location="../../../../../EBS/Credito/xsd/ParametrosCredito.xsd" ::)
+(:: pragma bea:global-element-return element="ns0:ParametrosSerasa" location="../../Interfaces/Schemas/Serasa.xsd" ::)
+
+declare namespace xf = "http://tempuri.org/OSB_Pedro/ServicosNegocio/Credito/Resources/Transformations/Serasa/VerificaCreditoExternoToParametrosSerasa/";
+declare namespace ns2 = "http://pucminas.br/SN/Credito";
+declare namespace ns1 = "http://pucminas.br/MC/SOA/Pedro";
+declare namespace ns0 = "http://serasa.com.br/SN/Serasa";
+
+declare function xf:VerificaCreditoExternoToParametrosSerasa($parametrosVerificaCreditoExterno1 as element(ns2:parametrosVerificaCreditoExterno))
+    as element(ns0:ParametrosSerasa) {
+        <ns0:ParametrosSerasa/>
+};
+
+declare variable $parametrosVerificaCreditoExterno1 as element(ns2:parametrosVerificaCreditoExterno) external;
+
+xf:VerificaCreditoExternoToParametrosSerasa($parametrosVerificaCreditoExterno1)

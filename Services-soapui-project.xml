@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f3ce2c8e-2879-41e6-976e-ef5a3f6822e2" activeEnvironment="Default" name="Services" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="0e101a19-f661-4614-a994-59dd31d5a13f" wsaVersion="NONE" name="CreditLegacyServiceSOAP" type="wsdl" bindingName="{http://cursosoa.org/CreditLegacyService/}CreditLegacyServiceSOAP" soapVersion="1_1" anonymous="optional" definition="file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/CreditLegacyService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/CreditLegacyService.wsdl"><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/CreditLegacyService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CreditLegacyService" targetNamespace="http://cursosoa.org/CreditLegacyService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tn="http://cursosoa.org/CreditLegacyService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://creditlegacy.com.br/SN/CreditLegacy">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://creditlegacy.com.br/CreditLegacy">
+      <xsd:import namespace="http://creditlegacy.com.br/SN/CreditLegacy" schemaLocation="../Schemas/CreditLegacy.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="CreditLegacyequest">
+    <wsdl:part element="ser:ParametrosCreditLegacy" name="ParametrosCreditLegacy"/>
+  </wsdl:message>
+  <wsdl:message name="CreditLegacyResponse">
+    <wsdl:part element="ser:ResultadoCreditLegacy" name="ResultadoCreditLegacy"/>
+  </wsdl:message>
+  <wsdl:portType name="CreditLegacyService">
+    <wsdl:operation name="ConsultarCreditLegacy">
+      <wsdl:input message="tn:CreditLegacyequest"/>
+      <wsdl:output message="tn:CreditLegacyResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CreditLegacyServiceSOAP" type="tn:CreditLegacyService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConsultarCreditLegacy">
+      <soap:operation soapAction="http://cursosoa.org/CreditLegacyService/CreditLegacyService"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CreditLegacyService">
+    <wsdl:port binding="tn:CreditLegacyServiceSOAP" name="CreditLegacyServiceSOAP">
+      <soap:address location="http://cursosoa.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Schemas/CreditLegacy.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://creditlegacy.com.br/SN/CreditLegacy" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://creditlegacy.com.br/SN/CreditLegacy">
+  <element name="ParametrosCreditLegacy" type="tns:ParametrosCreditLegacy"/>
+  <element name="ResultadoCreditLegacy" type="tns:ResultadoCreditLegacy"/>
+  <complexType name="ParametrosCreditLegacy">
+    <sequence>
+      <element name="cpf" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="motivos" type="tns:ListaMotivo" minOccurs="1" maxOccurs="1"/>
+      <element name="dt_solicitacao" type="date" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <complexType name="ResultadoCreditLegacy">
+    <sequence>
+      <element name="cpf" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="restricoes" type="tns:ListaRestricoes" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <complexType name="ListaMotivo">
+    <sequence>
+      <element name="ds_motivo" type="string" minOccurs="1" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <complexType name="ListaRestricoes">
+    <sequence>
+      <element name="restricao" type="tns:restricao" minOccurs="1" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <complexType name="restricao">
+    <sequence>
+      <element name="ds_restricao" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="valor" type="string" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://cursosoa.org/</con:endpoint><con:endpoint>http://puc-VirtualBox:8090/CreditLegacyService</con:endpoint></con:endpoints><con:operation id="44691ca4-f160-4789-9acb-24b1b4be1e55" isOneWay="false" action="http://cursosoa.org/CreditLegacyService/CreditLegacyService" name="ConsultarCreditLegacy" bindingOperationName="ConsultarCreditLegacy" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d6e5db40-c68c-489f-8c25-b35a0a32bb3d" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/CreditLegacyService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cred="http://creditlegacy.com.br/SN/CreditLegacy">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cred:ParametrosCreditLegacy>
+         <cred:cpf>?</cred:cpf>
+         <cred:motivos>
+            <!--1 or more repetitions:-->
+            <cred:ds_motivo>?</cred:ds_motivo>
+         </cred:motivos>
+         <cred:dt_solicitacao>?</cred:dt_solicitacao>
+      </cred:ParametrosCreditLegacy>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cursosoa.org/CreditLegacyService/CreditLegacyService"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="221f5ab5-5f3f-4422-a708-b6871575f935" wsaVersion="NONE" name="InternalWhiteListServiceSOAP" type="wsdl" bindingName="{http://cursosoa.org/InternalWhiteListService/}InternalWhiteListServiceSOAP" soapVersion="1_1" anonymous="optional" definition="file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/InternalWhiteListService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/InternalWhiteListService.wsdl"><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/InternalWhiteListService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="InternalWhiteListService" targetNamespace="http://cursosoa.org/InternalWhiteListService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tn="http://cursosoa.org/InternalWhiteListService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://whitelist.com.br/SN/WhiteList">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://internalwhitelist.com.br/InternalWhiteList">
+      <xsd:import namespace="http://whitelist.com.br/SN/WhiteList" schemaLocation="../Schemas/InternalWhiteList.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="InternalWhiteListequest">
+    <wsdl:part element="ser:ParametrosWhiteList" name="ParametrosInternalWhiteList"/>
+  </wsdl:message>
+  <wsdl:message name="InternalWhiteListResponse">
+    <wsdl:part element="ser:ResultadoWhiteList" name="ResultadoInternalWhiteList"/>
+  </wsdl:message>
+  <wsdl:portType name="InternalWhiteListService">
+    <wsdl:operation name="ConsultarInternalWhiteList">
+      <wsdl:input message="tn:InternalWhiteListequest"/>
+      <wsdl:output message="tn:InternalWhiteListResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="InternalWhiteListServiceSOAP" type="tn:InternalWhiteListService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConsultarInternalWhiteList">
+      <soap:operation soapAction="http://cursosoa.org/InternalWhiteListService/InternalWhiteListService"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="InternalWhiteListService">
+    <wsdl:port binding="tn:InternalWhiteListServiceSOAP" name="InternalWhiteListServiceSOAP">
+      <soap:address location="http://cursosoa.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Schemas/InternalWhiteList.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://whitelist.com.br/SN/WhiteList" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://whitelist.com.br/SN/WhiteList">
+  <element name="ParametrosWhiteList" type="tns:ParametrosWhiteList"/>
+  <element name="ResultadoWhiteList" type="tns:ResultadoWhiteList"/>
+  <complexType name="ParametrosWhiteList">
+    <sequence>
+      <element name="num_documento" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="dt_nascimento" type="date" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <complexType name="ResultadoWhiteList">
+    <sequence>
+      <element name="num_documento" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="indica_white_list" type="boolean" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://cursosoa.org/</con:endpoint><con:endpoint>http://puc-VirtualBox:8090/InternalWhiteListService</con:endpoint><con:endpoint>http://puc-VirtualBox:8091/mockInternalWhiteListServiceSOAP</con:endpoint></con:endpoints><con:operation id="37171be5-ebc5-42f4-9235-81cd6ecd8bac" isOneWay="false" action="http://cursosoa.org/InternalWhiteListService/InternalWhiteListService" name="ConsultarInternalWhiteList" bindingOperationName="ConsultarInternalWhiteList" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="164e735b-f6d1-4aef-a192-a826e85c82ee" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/InternalWhiteListService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:whit="http://whitelist.com.br/SN/WhiteList">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <whit:ParametrosWhiteList>
+         <whit:num_documento>?</whit:num_documento>
+         <whit:dt_nascimento>?</whit:dt_nascimento>
+      </whit:ParametrosWhiteList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cursosoa.org/InternalWhiteListService/InternalWhiteListService"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="b8b7fa1b-696d-4ea4-ac15-b48ed22ff907" wsaVersion="NONE" name="SerasaServiceSOAP" type="wsdl" bindingName="{http://cursosoa.org/SerasaService/}SerasaServiceSOAP" soapVersion="1_1" anonymous="optional" definition="file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/SerasaService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/SerasaService.wsdl"><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/SerasaService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SerasaService" targetNamespace="http://cursosoa.org/SerasaService/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tn="http://cursosoa.org/SerasaService/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://serasa.com.br/SN/Serasa">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://serasa.com.br/Serasa">
+      <xsd:import namespace="http://serasa.com.br/SN/Serasa" schemaLocation="../Schemas/Serasa.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Serasaequest">
+    <wsdl:part element="ser:ParametrosSerasa" name="ParametrosSerasa"/>
+  </wsdl:message>
+  <wsdl:message name="SerasaResponse">
+    <wsdl:part element="ser:ResultadoSerasa" name="ResultadoSerasa"/>
+  </wsdl:message>
+  <wsdl:portType name="SerasaService">
+    <wsdl:operation name="ConsultarSerasa">
+      <wsdl:input message="tn:Serasaequest"/>
+      <wsdl:output message="tn:SerasaResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SerasaServiceSOAP" type="tn:SerasaService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConsultarSerasa">
+      <soap:operation soapAction="http://cursosoa.org/SerasaService/SerasaService"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SerasaService">
+    <wsdl:port binding="tn:SerasaServiceSOAP" name="SerasaServiceSOAP">
+      <soap:address location="http://cursosoa.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Schemas/Serasa.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://serasa.com.br/SN/Serasa" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://serasa.com.br/SN/Serasa">
+  <element name="ParametrosSerasa" type="tns:ParametrosSerasa"/>
+  <element name="ResultadoSerasa" type="tns:ResultadoSerasa"/>
+  <complexType name="ParametrosSerasa">
+    <sequence>
+      <element name="num_documento" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="dt_nascimento" type="date" minOccurs="1" maxOccurs="1"/>
+      <element name="dt_solicitacao" type="date" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+  <complexType name="ResultadoSerasa">
+    <sequence>
+      <element name="num_documento" type="string" minOccurs="1" maxOccurs="1"/>
+      <element name="valor_restricao" type="decimal" minOccurs="1" maxOccurs="1"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://cursosoa.org/</con:endpoint><con:endpoint>http://puc-VirtualBox:8090/SerasaService</con:endpoint><con:endpoint>http://puc-VirtualBox:8092/mockSerasaServiceSOAP</con:endpoint></con:endpoints><con:operation id="a2a6f640-8ea1-4fda-9741-ec75bc9d7863" isOneWay="false" action="http://cursosoa.org/SerasaService/SerasaService" name="ConsultarSerasa" bindingOperationName="ConsultarSerasa" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="687b5e47-e54d-4f37-b49c-ea98f105a788" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/SerasaService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://serasa.com.br/SN/Serasa">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:ParametrosSerasa>
+         <ser:num_documento>?</ser:num_documento>
+         <ser:dt_nascimento>?</ser:dt_nascimento>
+         <ser:dt_solicitacao>?</ser:dt_solicitacao>
+      </ser:ParametrosSerasa>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cursosoa.org/SerasaService/SerasaService"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:mockService id="9a09930d-2a38-4792-abdb-76c29f237d26" port="8090" path="/CreditLegacyService" host="puc-VirtualBox" name="CreditLegacyServiceSOAP MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="ConsultarCreditLegacy" id="2dd020d9-0eb9-4211-865a-5c1314b7074e" interface="CreditLegacyServiceSOAP" operation="ConsultarCreditLegacy"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="73e8e57a-4bd9-452f-9096-dae5a1e6c38b" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cred="http://creditlegacy.com.br/SN/CreditLegacy">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cred:ResultadoCreditLegacy>
+         <cred:cpf>123.456.789-09</cred:cpf>
+         <cred:restricoes>
+            <!--1 or more repetitions:-->
+            <cred:restricao>
+               <cred:ds_restricao>restriçao_2</cred:ds_restricao>
+               <cred:valor>20</cred:valor>
+            </cred:restricao>
+         </cred:restricoes>
+      </cred:ResultadoCreditLegacy>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cursosoa.org/CreditLegacyService/CreditLegacyService"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:mockService id="ad88d4e9-9558-4042-83e6-072a20e0737e" port="8090" path="/InternalWhiteListService" host="puc-VirtualBox" name="InternalWhiteListServiceSOAP MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="ConsultarInternalWhiteList" id="37ab350c-85aa-45f1-ae60-c09ac6b1305b" interface="InternalWhiteListServiceSOAP" operation="ConsultarInternalWhiteList"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="11650285-8c20-4f56-8979-446048aa8614" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:whit="http://whitelist.com.br/SN/WhiteList">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <whit:ResultadoWhiteList>
+         <whit:num_documento>123.456.789-09</whit:num_documento>
+         <whit:indica_white_list>true</whit:indica_white_list>
+      </whit:ResultadoWhiteList>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cursosoa.org/InternalWhiteListService/InternalWhiteListService"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:mockService id="41c7deea-ead0-4925-b18b-354a09615417" port="8090" path="/SerasaService" host="puc-VirtualBox" name="SerasaServiceSOAP MockService"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="ConsultarSerasa" id="5fcadc6c-6a35-441c-a072-f7074ecc086e" interface="SerasaServiceSOAP" operation="ConsultarSerasa"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:response name="Response 1" id="736e65b5-37bc-414f-a117-a6f9f6bc1701" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:ser="http://serasa.com.br/SN/Serasa">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <ser:ResultadoSerasa>
+         <ser:num_documento>123.456.789-09</ser:num_documento>
+         <ser:valor_restricao>20</ser:valor_restricao>
+      </ser:ResultadoSerasa>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://cursosoa.org/SerasaService/SerasaService"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:sensitiveInformation/></con:soapui-project>

@@ -1241,3 +1241,1922 @@ Caused by: java.security.cert.CertificateExpiredException: NotAfter: Wed Sep 25 
 	at sun.security.provider.certpath.BasicChecker.check(BasicChecker.java:136)
 	at sun.security.provider.certpath.PKIXMasterCertPathValidator.validate(PKIXMasterCertPathValidator.java:133)
 	... 27 more
+
+!ENTRY org.eclipse.ui.workbench 4 0 2016-11-17 21:29:19.143
+!MESSAGE WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+!STACK 0
+java.lang.RuntimeException: WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3586)
+	at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:3159)
+	at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:279)
+	at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:237)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1263)
+	at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:1580)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2823)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2759)
+	at org.eclipse.swt.widgets.Composite.gtk_button_press_event(Composite.java:681)
+	at org.eclipse.swt.widgets.Tree.gtk_button_press_event(Tree.java:1871)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1731)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5016)
+	at org.eclipse.swt.widgets.Tree.windowProc(Tree.java:3530)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4408)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8422)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1245)
+	at org.eclipse.swt.internal.gtk.OS._gtk_enumerate_printers(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_enumerate_printers(OS.java:9324)
+	at org.eclipse.swt.printing.Printer.getPrinterList(Printer.java:98)
+	at org.eclipse.gef.ui.actions.PrintAction.calculateEnabled(PrintAction.java:45)
+	at org.eclipse.gef.ui.actions.WorkbenchPartAction.isEnabled(WorkbenchPartAction.java:123)
+	at org.eclipse.jface.commands.ActionHandler.isEnabled(ActionHandler.java:141)
+	at org.eclipse.core.commands.Command.isEnabled(Command.java:833)
+	at org.eclipse.core.commands.Command.setHandler(Command.java:996)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.updateCommand(HandlerAuthority.java:459)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.processChangedCommands(HandlerAuthority.java:638)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.access$1(HandlerAuthority.java:610)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority$1.propertyChange(HandlerAuthority.java:175)
+	at org.eclipse.ui.internal.services.EvaluationAuthority$1.run(EvaluationAuthority.java:252)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.fireServiceChange(EvaluationAuthority.java:246)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.endSourceChange(EvaluationAuthority.java:197)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.sourceChanged(EvaluationAuthority.java:135)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:311)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:290)
+	at org.eclipse.ui.AbstractSourceProvider.fireSourceChanged(AbstractSourceProvider.java:99)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:401)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:300)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider$1.partDeactivated(WorkbenchSourceProvider.java:247)
+	at org.eclipse.ui.internal.PartListenerList$4.run(PartListenerList.java:117)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList.fireEvent(PartListenerList.java:57)
+	at org.eclipse.ui.internal.PartListenerList.firePartDeactivated(PartListenerList.java:115)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:238)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WWinPartService.updateActivePart(WWinPartService.java:134)
+	at org.eclipse.ui.internal.WWinPartService.access$0(WWinPartService.java:125)
+	at org.eclipse.ui.internal.WWinPartService$WWinListener.partDeactivated(WWinPartService.java:50)
+	at org.eclipse.ui.internal.PartListenerList2$4.run(PartListenerList2.java:115)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList2.fireEvent(PartListenerList2.java:55)
+	at org.eclipse.ui.internal.PartListenerList2.firePartDeactivated(PartListenerList2.java:113)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:242)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WorkbenchPagePartList.fireActivePartChanged(WorkbenchPagePartList.java:57)
+	at org.eclipse.ui.internal.PartList.setActivePart(PartList.java:136)
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3636)
+	at org.eclipse.ui.internal.WorkbenchPage.internalActivate(WorkbenchPage.java:691)
+	at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:663)
+	at org.eclipse.ui.internal.WorkbenchPage.showEditor(WorkbenchPage.java:3031)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditorBatched(WorkbenchPage.java:2931)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2850)
+	at org.eclipse.ui.internal.WorkbenchPage.access$11(WorkbenchPage.java:2842)
+	at org.eclipse.ui.internal.WorkbenchPage$10.run(WorkbenchPage.java:2793)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2789)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2773)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2756)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:683)
+	at org.python.pydev.navigator.actions.PyOpenResourceAction.openFiles(PyOpenResourceAction.java:101)
+	at org.python.pydev.navigator.actions.PyOpenPythonFileAction.run(PyOpenPythonFileAction.java:85)
+	at org.eclipse.ui.actions.RetargetAction.run(RetargetAction.java:221)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$3.open(CommonNavigatorManager.java:185)
+	at org.eclipse.ui.OpenAndLinkWithEditorHelper$InternalListener.open(OpenAndLinkWithEditorHelper.java:48)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:866)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:864)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1152)
+	at org.eclipse.ui.navigator.CommonViewer.handleOpen(CommonViewer.java:462)
+	at org.eclipse.jface.viewers.StructuredViewer$6.handleOpen(StructuredViewer.java:1256)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:275)
+	at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:269)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:309)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY org.python.pydev.core 4 4 2016-11-17 22:02:40.186
+!MESSAGE sun.security.validator.ValidatorException: PKIX path validation failed: java.security.cert.CertPathValidatorException: timestamp check failed
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path validation failed: java.security.cert.CertPathValidatorException: timestamp check failed
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1904)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:279)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:273)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1446)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:209)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:901)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:837)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1023)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1332)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1359)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1343)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:563)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1092)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getOutputStream(HttpsURLConnectionImpl.java:250)
+	at org.python.pydev.logging.ping.LogPingSender.sendPing(LogPingSender.java:62)
+	at org.python.pydev.logging.ping.SynchedLogPing.send(SynchedLogPing.java:164)
+	at org.python.pydev.logging.ping.AsyncLogPing.consumeAllCommands(AsyncLogPing.java:131)
+	at org.python.pydev.logging.ping.AsyncLogPing.access$0(AsyncLogPing.java:100)
+	at org.python.pydev.logging.ping.AsyncLogPing$1.run(AsyncLogPing.java:47)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: sun.security.validator.ValidatorException: PKIX path validation failed: java.security.cert.CertPathValidatorException: timestamp check failed
+	at sun.security.validator.PKIXValidator.doValidate(PKIXValidator.java:350)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:249)
+	at sun.security.validator.Validator.validate(Validator.java:260)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:326)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:231)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:126)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1428)
+	... 17 more
+Caused by: java.security.cert.CertPathValidatorException: timestamp check failed
+	at sun.security.provider.certpath.PKIXMasterCertPathValidator.validate(PKIXMasterCertPathValidator.java:159)
+	at sun.security.provider.certpath.PKIXCertPathValidator.doValidate(PKIXCertPathValidator.java:347)
+	at sun.security.provider.certpath.PKIXCertPathValidator.engineValidate(PKIXCertPathValidator.java:191)
+	at java.security.cert.CertPathValidator.validate(CertPathValidator.java:279)
+	at sun.security.validator.PKIXValidator.doValidate(PKIXValidator.java:345)
+	... 23 more
+Caused by: java.security.cert.CertificateExpiredException: NotAfter: Wed Sep 25 18:29:33 BRT 2013
+	at sun.security.x509.CertificateValidity.valid(CertificateValidity.java:273)
+	at sun.security.x509.X509CertImpl.checkValidity(X509CertImpl.java:575)
+	at sun.security.provider.certpath.BasicChecker.verifyTimestamp(BasicChecker.java:184)
+	at sun.security.provider.certpath.BasicChecker.check(BasicChecker.java:136)
+	at sun.security.provider.certpath.PKIXMasterCertPathValidator.validate(PKIXMasterCertPathValidator.java:133)
+	... 27 more
+
+!ENTRY org.eclipse.ui.workbench 4 0 2016-11-17 22:12:34.994
+!MESSAGE WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+!STACK 0
+java.lang.RuntimeException: WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3586)
+	at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:3159)
+	at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:279)
+	at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:237)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1263)
+	at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:1580)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2823)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2759)
+	at org.eclipse.swt.widgets.Composite.gtk_button_press_event(Composite.java:681)
+	at org.eclipse.swt.widgets.Tree.gtk_button_press_event(Tree.java:1871)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1731)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5016)
+	at org.eclipse.swt.widgets.Tree.windowProc(Tree.java:3530)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4408)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8422)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1245)
+	at org.eclipse.swt.internal.gtk.OS._gtk_enumerate_printers(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_enumerate_printers(OS.java:9324)
+	at org.eclipse.swt.printing.Printer.getPrinterList(Printer.java:98)
+	at org.eclipse.gef.ui.actions.PrintAction.calculateEnabled(PrintAction.java:45)
+	at org.eclipse.gef.ui.actions.WorkbenchPartAction.isEnabled(WorkbenchPartAction.java:123)
+	at org.eclipse.jface.commands.ActionHandler.isEnabled(ActionHandler.java:141)
+	at org.eclipse.core.commands.Command.isEnabled(Command.java:833)
+	at org.eclipse.core.commands.Command.setHandler(Command.java:996)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.updateCommand(HandlerAuthority.java:459)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.processChangedCommands(HandlerAuthority.java:638)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.access$1(HandlerAuthority.java:610)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority$1.propertyChange(HandlerAuthority.java:175)
+	at org.eclipse.ui.internal.services.EvaluationAuthority$1.run(EvaluationAuthority.java:252)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.fireServiceChange(EvaluationAuthority.java:246)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.endSourceChange(EvaluationAuthority.java:197)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.sourceChanged(EvaluationAuthority.java:135)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:311)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:290)
+	at org.eclipse.ui.AbstractSourceProvider.fireSourceChanged(AbstractSourceProvider.java:99)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:401)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:300)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider$1.partDeactivated(WorkbenchSourceProvider.java:247)
+	at org.eclipse.ui.internal.PartListenerList$4.run(PartListenerList.java:117)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList.fireEvent(PartListenerList.java:57)
+	at org.eclipse.ui.internal.PartListenerList.firePartDeactivated(PartListenerList.java:115)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:238)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WWinPartService.updateActivePart(WWinPartService.java:134)
+	at org.eclipse.ui.internal.WWinPartService.access$0(WWinPartService.java:125)
+	at org.eclipse.ui.internal.WWinPartService$WWinListener.partDeactivated(WWinPartService.java:50)
+	at org.eclipse.ui.internal.PartListenerList2$4.run(PartListenerList2.java:115)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList2.fireEvent(PartListenerList2.java:55)
+	at org.eclipse.ui.internal.PartListenerList2.firePartDeactivated(PartListenerList2.java:113)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:242)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WorkbenchPagePartList.fireActivePartChanged(WorkbenchPagePartList.java:57)
+	at org.eclipse.ui.internal.PartList.setActivePart(PartList.java:136)
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3636)
+	at org.eclipse.ui.internal.WorkbenchPage.internalActivate(WorkbenchPage.java:691)
+	at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:663)
+	at org.eclipse.ui.internal.WorkbenchPage.showEditor(WorkbenchPage.java:3031)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditorBatched(WorkbenchPage.java:2931)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2850)
+	at org.eclipse.ui.internal.WorkbenchPage.access$11(WorkbenchPage.java:2842)
+	at org.eclipse.ui.internal.WorkbenchPage$10.run(WorkbenchPage.java:2793)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2789)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2773)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2756)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:683)
+	at org.python.pydev.navigator.actions.PyOpenResourceAction.openFiles(PyOpenResourceAction.java:101)
+	at org.python.pydev.navigator.actions.PyOpenPythonFileAction.run(PyOpenPythonFileAction.java:85)
+	at org.eclipse.ui.actions.RetargetAction.run(RetargetAction.java:221)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$3.open(CommonNavigatorManager.java:185)
+	at org.eclipse.ui.OpenAndLinkWithEditorHelper$InternalListener.open(OpenAndLinkWithEditorHelper.java:48)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:866)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:864)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1152)
+	at org.eclipse.ui.navigator.CommonViewer.handleOpen(CommonViewer.java:462)
+	at org.eclipse.jface.viewers.StructuredViewer$6.handleOpen(StructuredViewer.java:1256)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:275)
+	at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:269)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:309)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:13:01.863
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:13:01.887
+!MESSAGE Module not changed:[OSB Configuration PUC]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:13:01.888
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:13:01.888
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:13:01.889
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:13:01.889
+!MESSAGE Total deleted modules: 0
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:01.901
+!MESSAGE Starting ALSB publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:01.901
+!MESSAGE Added 2 modules out of 2
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.190
+!MESSAGE ALSB Publish Summary: Deleted Projects
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.191
+!MESSAGE No deleted projects to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.205
+!MESSAGE ALSB Publish Summary: Added/Removed/Changed
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.205
+!MESSAGE Will publish: verificaWhiteListProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.205
+!MESSAGE Will publish: ResultadoWhiteListToVerificaWhiteList.xq
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.205
+!MESSAGE Will publish: ParametroVerificaCreditoInternoTest.xml
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.205
+!MESSAGE Will publish: VerificaCreditoInternoToCreditLegacy.xq
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.205
+!MESSAGE Will publish: ParametrosVerificaWhiteListTest.xml
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.205
+!MESSAGE Will publish: Pessoa.xsd
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.205
+!MESSAGE Will publish: InternalWhiteListProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.205
+!MESSAGE Will publish: ParametrosCreditoExternoTeste.xml
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.205
+!MESSAGE Will publish: ResultadoVerificaWhiteListTest.xml
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.206
+!MESSAGE Will publish: ResultadoVerificaCreditoExternoTest.xml
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.206
+!MESSAGE Will publish: VerificaWhiteListToParametroWhiteList.xq
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.206
+!MESSAGE Will publish: InternalWhiteListService.wsdl
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.206
+!MESSAGE Will publish: CreditLegacyResponseToCreditoInternoResponse.xq
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.206
+!MESSAGE Will publish: InternalWhiteListBusinessService.biz
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.206
+!MESSAGE Will publish: ResultadoVerificaCreditoInternoTest.xml
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.206
+!MESSAGE No removed resources to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:02.325
+!MESSAGE Beginning import to ALSB server.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:06.573
+!MESSAGE Import to ALSB server completed.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:13:06.573
+!MESSAGE ALSB publish finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:13:06.574
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:13:06.574
+!MESSAGE No Weblogic J2EE module to publish
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:13:06.574
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:18:01.913
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:18:01.915
+!MESSAGE Module not changed:[OSB Configuration PUC]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:18:01.916
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:18:01.917
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:18:01.917
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:18:01.917
+!MESSAGE Total deleted modules: 0
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:18:01.930
+!MESSAGE Starting ALSB publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:18:01.930
+!MESSAGE Added 2 modules out of 2
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:18:02.560
+!MESSAGE ALSB Publish Summary: Deleted Projects
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:18:02.560
+!MESSAGE No deleted projects to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:18:02.578
+!MESSAGE ALSB Publish Summary: Added/Removed/Changed
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:18:02.579
+!MESSAGE Will publish: verificaWhiteListProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:18:02.579
+!MESSAGE No removed resources to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:18:02.654
+!MESSAGE Beginning import to ALSB server.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:18:03.036
+!MESSAGE Import to ALSB server completed.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:18:03.036
+!MESSAGE ALSB publish finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:18:03.037
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:18:03.037
+!MESSAGE No Weblogic J2EE module to publish
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:18:03.037
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:19:14.870
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:19:14.872
+!MESSAGE Module not changed:[OSB Configuration PUC]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:19:14.872
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:19:14.873
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:19:14.873
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:19:14.873
+!MESSAGE Total deleted modules: 0
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:19:14.889
+!MESSAGE Starting ALSB publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:19:14.889
+!MESSAGE Added 2 modules out of 2
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:19:15.569
+!MESSAGE ALSB Publish Summary: Deleted Projects
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:19:15.569
+!MESSAGE No deleted projects to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:19:15.597
+!MESSAGE ALSB Publish Summary: Added/Removed/Changed
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:19:15.597
+!MESSAGE Will publish: verificaWhiteListProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:19:15.598
+!MESSAGE No removed resources to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:19:15.818
+!MESSAGE Beginning import to ALSB server.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:19:16.407
+!MESSAGE Import to ALSB server completed.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:19:16.412
+!MESSAGE ALSB publish finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:19:16.412
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:19:16.412
+!MESSAGE No Weblogic J2EE module to publish
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:19:16.412
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:20:25.491
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:20:25.493
+!MESSAGE Module not changed:[OSB Configuration PUC]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:20:25.493
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:20:25.494
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:20:25.494
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:20:25.494
+!MESSAGE Total deleted modules: 0
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:20:25.509
+!MESSAGE Starting ALSB publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:20:25.510
+!MESSAGE Added 2 modules out of 2
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:20:25.858
+!MESSAGE ALSB Publish Summary: Deleted Projects
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:20:25.858
+!MESSAGE No deleted projects to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:20:25.877
+!MESSAGE ALSB Publish Summary: Added/Removed/Changed
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:20:25.877
+!MESSAGE Will publish: verificaWhiteListProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:20:25.877
+!MESSAGE No removed resources to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:20:25.977
+!MESSAGE Beginning import to ALSB server.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:20:26.637
+!MESSAGE Import to ALSB server completed.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:20:26.637
+!MESSAGE ALSB publish finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:20:26.638
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:20:26.638
+!MESSAGE No Weblogic J2EE module to publish
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:20:26.638
+!MESSAGE Publishing finished.
+
+!ENTRY org.eclipse.ui.workbench 4 0 2016-11-17 22:22:19.852
+!MESSAGE WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+!STACK 0
+java.lang.RuntimeException: WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3586)
+	at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:3159)
+	at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:279)
+	at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:237)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1263)
+	at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:1580)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2823)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2759)
+	at org.eclipse.swt.widgets.Composite.gtk_button_press_event(Composite.java:681)
+	at org.eclipse.swt.widgets.Tree.gtk_button_press_event(Tree.java:1871)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1731)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5016)
+	at org.eclipse.swt.widgets.Tree.windowProc(Tree.java:3530)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4408)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8422)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1245)
+	at org.eclipse.swt.internal.gtk.OS._gtk_enumerate_printers(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_enumerate_printers(OS.java:9324)
+	at org.eclipse.swt.printing.Printer.getPrinterList(Printer.java:98)
+	at org.eclipse.gef.ui.actions.PrintAction.calculateEnabled(PrintAction.java:45)
+	at org.eclipse.gef.ui.actions.WorkbenchPartAction.isEnabled(WorkbenchPartAction.java:123)
+	at org.eclipse.jface.commands.ActionHandler.isEnabled(ActionHandler.java:141)
+	at org.eclipse.core.commands.Command.isEnabled(Command.java:833)
+	at org.eclipse.core.commands.Command.setHandler(Command.java:996)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.updateCommand(HandlerAuthority.java:459)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.processChangedCommands(HandlerAuthority.java:638)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.access$1(HandlerAuthority.java:610)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority$1.propertyChange(HandlerAuthority.java:175)
+	at org.eclipse.ui.internal.services.EvaluationAuthority$1.run(EvaluationAuthority.java:252)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.fireServiceChange(EvaluationAuthority.java:246)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.endSourceChange(EvaluationAuthority.java:197)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.sourceChanged(EvaluationAuthority.java:135)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:311)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:290)
+	at org.eclipse.ui.AbstractSourceProvider.fireSourceChanged(AbstractSourceProvider.java:99)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:401)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:300)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider$1.partDeactivated(WorkbenchSourceProvider.java:247)
+	at org.eclipse.ui.internal.PartListenerList$4.run(PartListenerList.java:117)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList.fireEvent(PartListenerList.java:57)
+	at org.eclipse.ui.internal.PartListenerList.firePartDeactivated(PartListenerList.java:115)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:238)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WWinPartService.updateActivePart(WWinPartService.java:134)
+	at org.eclipse.ui.internal.WWinPartService.access$0(WWinPartService.java:125)
+	at org.eclipse.ui.internal.WWinPartService$WWinListener.partDeactivated(WWinPartService.java:50)
+	at org.eclipse.ui.internal.PartListenerList2$4.run(PartListenerList2.java:115)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList2.fireEvent(PartListenerList2.java:55)
+	at org.eclipse.ui.internal.PartListenerList2.firePartDeactivated(PartListenerList2.java:113)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:242)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WorkbenchPagePartList.fireActivePartChanged(WorkbenchPagePartList.java:57)
+	at org.eclipse.ui.internal.PartList.setActivePart(PartList.java:136)
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3636)
+	at org.eclipse.ui.internal.WorkbenchPage.internalActivate(WorkbenchPage.java:691)
+	at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:663)
+	at org.eclipse.ui.internal.WorkbenchPage.showEditor(WorkbenchPage.java:3031)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditorBatched(WorkbenchPage.java:2931)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2850)
+	at org.eclipse.ui.internal.WorkbenchPage.access$11(WorkbenchPage.java:2842)
+	at org.eclipse.ui.internal.WorkbenchPage$10.run(WorkbenchPage.java:2793)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2789)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2773)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2756)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:683)
+	at org.python.pydev.navigator.actions.PyOpenResourceAction.openFiles(PyOpenResourceAction.java:101)
+	at org.python.pydev.navigator.actions.PyOpenPythonFileAction.run(PyOpenPythonFileAction.java:85)
+	at org.eclipse.ui.actions.RetargetAction.run(RetargetAction.java:221)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$3.open(CommonNavigatorManager.java:185)
+	at org.eclipse.ui.OpenAndLinkWithEditorHelper$InternalListener.open(OpenAndLinkWithEditorHelper.java:48)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:866)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:864)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1152)
+	at org.eclipse.ui.navigator.CommonViewer.handleOpen(CommonViewer.java:462)
+	at org.eclipse.jface.viewers.StructuredViewer$6.handleOpen(StructuredViewer.java:1256)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:275)
+	at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:269)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:309)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:22:48.726
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:22:48.727
+!MESSAGE Module not changed:[OSB Configuration PUC]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:22:48.727
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:22:48.728
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:22:48.728
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:22:48.728
+!MESSAGE Total deleted modules: 0
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:22:48.747
+!MESSAGE Starting ALSB publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:22:48.747
+!MESSAGE Added 2 modules out of 2
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:22:49.094
+!MESSAGE ALSB Publish Summary: Deleted Projects
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:22:49.095
+!MESSAGE No deleted projects to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:22:49.121
+!MESSAGE ALSB Publish Summary: Added/Removed/Changed
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:22:49.121
+!MESSAGE Will publish: verificaWhiteListProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:22:49.122
+!MESSAGE No removed resources to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:22:49.248
+!MESSAGE Beginning import to ALSB server.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:22:49.693
+!MESSAGE Import to ALSB server completed.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:22:49.693
+!MESSAGE ALSB publish finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:22:49.693
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:22:49.698
+!MESSAGE No Weblogic J2EE module to publish
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:22:49.698
+!MESSAGE Publishing finished.
+
+!ENTRY org.eclipse.ui.workbench 4 0 2016-11-17 22:23:40.269
+!MESSAGE WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+!STACK 0
+java.lang.RuntimeException: WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3586)
+	at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:3159)
+	at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:279)
+	at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:237)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1263)
+	at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:1580)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2823)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2759)
+	at org.eclipse.swt.widgets.Composite.gtk_button_press_event(Composite.java:681)
+	at org.eclipse.swt.widgets.Tree.gtk_button_press_event(Tree.java:1871)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1731)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5016)
+	at org.eclipse.swt.widgets.Tree.windowProc(Tree.java:3530)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4408)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8422)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1245)
+	at org.eclipse.swt.internal.gtk.OS._gtk_enumerate_printers(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_enumerate_printers(OS.java:9324)
+	at org.eclipse.swt.printing.Printer.getPrinterList(Printer.java:98)
+	at org.eclipse.gef.ui.actions.PrintAction.calculateEnabled(PrintAction.java:45)
+	at org.eclipse.gef.ui.actions.WorkbenchPartAction.isEnabled(WorkbenchPartAction.java:123)
+	at org.eclipse.jface.commands.ActionHandler.isEnabled(ActionHandler.java:141)
+	at org.eclipse.core.commands.Command.isEnabled(Command.java:833)
+	at org.eclipse.core.commands.Command.setHandler(Command.java:996)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.updateCommand(HandlerAuthority.java:459)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.processChangedCommands(HandlerAuthority.java:638)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.access$1(HandlerAuthority.java:610)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority$1.propertyChange(HandlerAuthority.java:175)
+	at org.eclipse.ui.internal.services.EvaluationAuthority$1.run(EvaluationAuthority.java:252)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.fireServiceChange(EvaluationAuthority.java:246)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.endSourceChange(EvaluationAuthority.java:197)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.sourceChanged(EvaluationAuthority.java:135)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:311)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:290)
+	at org.eclipse.ui.AbstractSourceProvider.fireSourceChanged(AbstractSourceProvider.java:99)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:401)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:300)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider$1.partDeactivated(WorkbenchSourceProvider.java:247)
+	at org.eclipse.ui.internal.PartListenerList$4.run(PartListenerList.java:117)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList.fireEvent(PartListenerList.java:57)
+	at org.eclipse.ui.internal.PartListenerList.firePartDeactivated(PartListenerList.java:115)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:238)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WWinPartService.updateActivePart(WWinPartService.java:134)
+	at org.eclipse.ui.internal.WWinPartService.access$0(WWinPartService.java:125)
+	at org.eclipse.ui.internal.WWinPartService$WWinListener.partDeactivated(WWinPartService.java:50)
+	at org.eclipse.ui.internal.PartListenerList2$4.run(PartListenerList2.java:115)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList2.fireEvent(PartListenerList2.java:55)
+	at org.eclipse.ui.internal.PartListenerList2.firePartDeactivated(PartListenerList2.java:113)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:242)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WorkbenchPagePartList.fireActivePartChanged(WorkbenchPagePartList.java:57)
+	at org.eclipse.ui.internal.PartList.setActivePart(PartList.java:136)
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3636)
+	at org.eclipse.ui.internal.WorkbenchPage.internalActivate(WorkbenchPage.java:691)
+	at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:663)
+	at org.eclipse.ui.internal.WorkbenchPage.showEditor(WorkbenchPage.java:3031)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditorBatched(WorkbenchPage.java:2931)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2850)
+	at org.eclipse.ui.internal.WorkbenchPage.access$11(WorkbenchPage.java:2842)
+	at org.eclipse.ui.internal.WorkbenchPage$10.run(WorkbenchPage.java:2793)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2789)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2773)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2756)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:683)
+	at org.python.pydev.navigator.actions.PyOpenResourceAction.openFiles(PyOpenResourceAction.java:101)
+	at org.python.pydev.navigator.actions.PyOpenPythonFileAction.run(PyOpenPythonFileAction.java:85)
+	at org.eclipse.ui.actions.RetargetAction.run(RetargetAction.java:221)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$3.open(CommonNavigatorManager.java:185)
+	at org.eclipse.ui.OpenAndLinkWithEditorHelper$InternalListener.open(OpenAndLinkWithEditorHelper.java:48)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:866)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:864)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1152)
+	at org.eclipse.ui.navigator.CommonViewer.handleOpen(CommonViewer.java:462)
+	at org.eclipse.jface.viewers.StructuredViewer$6.handleOpen(StructuredViewer.java:1256)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:275)
+	at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:269)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:309)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY org.eclipse.ui.workbench 4 0 2016-11-17 22:23:52.496
+!MESSAGE WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+!STACK 0
+java.lang.RuntimeException: WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3586)
+	at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:3159)
+	at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:279)
+	at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:237)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1263)
+	at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:1580)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2823)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2759)
+	at org.eclipse.swt.widgets.Composite.gtk_button_press_event(Composite.java:681)
+	at org.eclipse.swt.widgets.Tree.gtk_button_press_event(Tree.java:1871)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1731)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5016)
+	at org.eclipse.swt.widgets.Tree.windowProc(Tree.java:3530)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4408)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8422)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1245)
+	at org.eclipse.swt.internal.gtk.OS._gtk_enumerate_printers(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_enumerate_printers(OS.java:9324)
+	at org.eclipse.swt.printing.Printer.getPrinterList(Printer.java:98)
+	at org.eclipse.gef.ui.actions.PrintAction.calculateEnabled(PrintAction.java:45)
+	at org.eclipse.gef.ui.actions.WorkbenchPartAction.isEnabled(WorkbenchPartAction.java:123)
+	at org.eclipse.jface.commands.ActionHandler.isEnabled(ActionHandler.java:141)
+	at org.eclipse.core.commands.Command.isEnabled(Command.java:833)
+	at org.eclipse.core.commands.Command.setHandler(Command.java:996)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.updateCommand(HandlerAuthority.java:459)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.processChangedCommands(HandlerAuthority.java:638)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.access$1(HandlerAuthority.java:610)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority$1.propertyChange(HandlerAuthority.java:175)
+	at org.eclipse.ui.internal.services.EvaluationAuthority$1.run(EvaluationAuthority.java:252)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.fireServiceChange(EvaluationAuthority.java:246)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.endSourceChange(EvaluationAuthority.java:197)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.sourceChanged(EvaluationAuthority.java:135)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:311)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:290)
+	at org.eclipse.ui.AbstractSourceProvider.fireSourceChanged(AbstractSourceProvider.java:99)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:401)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:300)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider$1.partDeactivated(WorkbenchSourceProvider.java:247)
+	at org.eclipse.ui.internal.PartListenerList$4.run(PartListenerList.java:117)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList.fireEvent(PartListenerList.java:57)
+	at org.eclipse.ui.internal.PartListenerList.firePartDeactivated(PartListenerList.java:115)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:238)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WWinPartService.updateActivePart(WWinPartService.java:134)
+	at org.eclipse.ui.internal.WWinPartService.access$0(WWinPartService.java:125)
+	at org.eclipse.ui.internal.WWinPartService$WWinListener.partDeactivated(WWinPartService.java:50)
+	at org.eclipse.ui.internal.PartListenerList2$4.run(PartListenerList2.java:115)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList2.fireEvent(PartListenerList2.java:55)
+	at org.eclipse.ui.internal.PartListenerList2.firePartDeactivated(PartListenerList2.java:113)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:242)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WorkbenchPagePartList.fireActivePartChanged(WorkbenchPagePartList.java:57)
+	at org.eclipse.ui.internal.PartList.setActivePart(PartList.java:136)
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3636)
+	at org.eclipse.ui.internal.WorkbenchPage.internalActivate(WorkbenchPage.java:691)
+	at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:663)
+	at org.eclipse.ui.internal.WorkbenchPage.showEditor(WorkbenchPage.java:3031)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditorBatched(WorkbenchPage.java:2931)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2850)
+	at org.eclipse.ui.internal.WorkbenchPage.access$11(WorkbenchPage.java:2842)
+	at org.eclipse.ui.internal.WorkbenchPage$10.run(WorkbenchPage.java:2793)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2789)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2773)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2756)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:683)
+	at org.python.pydev.navigator.actions.PyOpenResourceAction.openFiles(PyOpenResourceAction.java:101)
+	at org.python.pydev.navigator.actions.PyOpenPythonFileAction.run(PyOpenPythonFileAction.java:85)
+	at org.eclipse.ui.actions.RetargetAction.run(RetargetAction.java:221)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$3.open(CommonNavigatorManager.java:185)
+	at org.eclipse.ui.OpenAndLinkWithEditorHelper$InternalListener.open(OpenAndLinkWithEditorHelper.java:48)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:866)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:864)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1152)
+	at org.eclipse.ui.navigator.CommonViewer.handleOpen(CommonViewer.java:462)
+	at org.eclipse.jface.viewers.StructuredViewer$6.handleOpen(StructuredViewer.java:1256)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:275)
+	at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:269)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:309)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:24:02.851
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:24:02.853
+!MESSAGE Module not changed:[OSB Configuration PUC]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:24:02.854
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:24:02.854
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:24:02.855
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:24:02.855
+!MESSAGE Total deleted modules: 0
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:24:02.866
+!MESSAGE Starting ALSB publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:24:02.866
+!MESSAGE Added 2 modules out of 2
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:24:03.225
+!MESSAGE ALSB Publish Summary: Deleted Projects
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:24:03.225
+!MESSAGE No deleted projects to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:24:03.239
+!MESSAGE ALSB Publish Summary: Added/Removed/Changed
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:24:03.239
+!MESSAGE Will publish: verificaWhiteListProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:24:03.239
+!MESSAGE No removed resources to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:24:03.325
+!MESSAGE Beginning import to ALSB server.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:24:03.672
+!MESSAGE Import to ALSB server completed.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 22:24:03.672
+!MESSAGE ALSB publish finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:24:03.672
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:24:03.672
+!MESSAGE No Weblogic J2EE module to publish
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 22:24:03.673
+!MESSAGE Publishing finished.
+!SESSION 2016-11-17 23:14:24.371 -----------------------------------------------
+eclipse.buildId=M20110909-1335
+java.version=1.7.0_79
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_US
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2016-11-17 23:14:28.582
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.jface 2 0 2016-11-17 23:14:51.226
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-11-17 23:14:51.226
+!MESSAGE A conflict occurred for ALT+SHIFT+R:
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(oracle.eclipse.tools.common.services.ui.refactor.rename.command,Rename,
+		Rename the selected text.,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		oracle.eclipse.tools.common.services.ui.refactor.internal.ArtifactRefactoringCommandHandler,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2016-11-17 23:14:51.226
+!MESSAGE A conflict occurred for CTRL+DEL:
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.datatools.sqltools.result.removeInstance,Remove Result,
+		,
+		Category(org.eclipse.datatools.sqltools.result.category,SQL Results View,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+DEL,
+	ParameterizedCommand(Command(org.eclipse.graphiti.ui.internal.action.RemoveAction,Remove,
+		Remove selected Pictogram Elements,
+		Category(org.eclipse.graphiti.ui.Graphiti_Category,Edit,Graphiti Diagram Editor,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:14:52.475
+!MESSAGE Started WebLogic Server Monitor [base_domain@127.0.0.1:7001, Version:10.3.6.0]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:14:52.630
+!MESSAGE Server watcher[Oracle WebLogic Server 11gR1 (10.3.6) at localhost [base_domain]]:running Weblogic detected, validating...
+
+!ENTRY org.python.pydev.core 4 4 2016-11-17 23:14:56.282
+!MESSAGE sun.security.validator.ValidatorException: PKIX path validation failed: java.security.cert.CertPathValidatorException: timestamp check failed
+!STACK 0
+javax.net.ssl.SSLHandshakeException: sun.security.validator.ValidatorException: PKIX path validation failed: java.security.cert.CertPathValidatorException: timestamp check failed
+	at sun.security.ssl.Alerts.getSSLException(Alerts.java:192)
+	at sun.security.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1904)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:279)
+	at sun.security.ssl.Handshaker.fatalSE(Handshaker.java:273)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1446)
+	at sun.security.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:209)
+	at sun.security.ssl.Handshaker.processLoop(Handshaker.java:901)
+	at sun.security.ssl.Handshaker.process_record(Handshaker.java:837)
+	at sun.security.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:1023)
+	at sun.security.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1332)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1359)
+	at sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1343)
+	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:563)
+	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:185)
+	at sun.net.www.protocol.http.HttpURLConnection.getOutputStream(HttpURLConnection.java:1092)
+	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getOutputStream(HttpsURLConnectionImpl.java:250)
+	at org.python.pydev.logging.ping.LogPingSender.sendPing(LogPingSender.java:62)
+	at org.python.pydev.logging.ping.SynchedLogPing.send(SynchedLogPing.java:164)
+	at org.python.pydev.logging.ping.AsyncLogPing.consumeAllCommands(AsyncLogPing.java:131)
+	at org.python.pydev.logging.ping.AsyncLogPing.access$0(AsyncLogPing.java:100)
+	at org.python.pydev.logging.ping.AsyncLogPing$1.run(AsyncLogPing.java:47)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: sun.security.validator.ValidatorException: PKIX path validation failed: java.security.cert.CertPathValidatorException: timestamp check failed
+	at sun.security.validator.PKIXValidator.doValidate(PKIXValidator.java:350)
+	at sun.security.validator.PKIXValidator.engineValidate(PKIXValidator.java:249)
+	at sun.security.validator.Validator.validate(Validator.java:260)
+	at sun.security.ssl.X509TrustManagerImpl.validate(X509TrustManagerImpl.java:326)
+	at sun.security.ssl.X509TrustManagerImpl.checkTrusted(X509TrustManagerImpl.java:231)
+	at sun.security.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:126)
+	at sun.security.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1428)
+	... 17 more
+Caused by: java.security.cert.CertPathValidatorException: timestamp check failed
+	at sun.security.provider.certpath.PKIXMasterCertPathValidator.validate(PKIXMasterCertPathValidator.java:159)
+	at sun.security.provider.certpath.PKIXCertPathValidator.doValidate(PKIXCertPathValidator.java:347)
+	at sun.security.provider.certpath.PKIXCertPathValidator.engineValidate(PKIXCertPathValidator.java:191)
+	at java.security.cert.CertPathValidator.validate(CertPathValidator.java:279)
+	at sun.security.validator.PKIXValidator.doValidate(PKIXValidator.java:345)
+	... 23 more
+Caused by: java.security.cert.CertificateExpiredException: NotAfter: Wed Sep 25 18:29:33 BRT 2013
+	at sun.security.x509.CertificateValidity.valid(CertificateValidity.java:273)
+	at sun.security.x509.X509CertImpl.checkValidity(X509CertImpl.java:575)
+	at sun.security.provider.certpath.BasicChecker.verifyTimestamp(BasicChecker.java:184)
+	at sun.security.provider.certpath.BasicChecker.check(BasicChecker.java:136)
+	at sun.security.provider.certpath.PKIXMasterCertPathValidator.validate(PKIXMasterCertPathValidator.java:133)
+	... 27 more
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:15:05.624
+!MESSAGE Creating Deployment manager...
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:15:05.625
+!MESSAGE Elapsed time 3511ms
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:15:05.626
+!MESSAGE Deployment manager created :[Oracle WebLogic Server 11gR1 (10.3.6) at localhost [base_domain]]@897023475
+
+!ENTRY com.bea.alsb.ui 4 0 2016-11-17 23:23:22.659
+!MESSAGE Unable to update policy table: null
+!STACK 0
+java.lang.NullPointerException
+	at com.bea.alsb.ui.resources.service.editor.PolicyMasterBlock$PolicyEditorComposite.disableCustomPolicyAreaListeners(Unknown Source)
+	at com.bea.alsb.ui.resources.service.editor.PolicyMasterBlock$PolicyEditorComposite.disableListeners(Unknown Source)
+	at com.bea.alsb.ui.resources.service.editor.PolicyMasterBlock$PolicyEditorComposite.refreshPolicyTable(Unknown Source)
+	at com.bea.alsb.ui.resources.service.editor.PolicyMasterBlock$PolicyEditorComposite.propertyChange(Unknown Source)
+	at java.beans.PropertyChangeSupport.fire(PropertyChangeSupport.java:335)
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:327)
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:263)
+	at com.bea.alsb.ui.common.model.ServiceObject.setTransport(Unknown Source)
+	at com.bea.alsb.ui.resources.service.TransportComposite.initProtocolCombo(Unknown Source)
+	at com.bea.alsb.ui.resources.service.TransportComposite.initControls(Unknown Source)
+	at com.bea.alsb.ui.resources.service.TransportComposite.performDynamicUpdate(Unknown Source)
+	at com.bea.alsb.ui.resources.service.TransportComposite.propertyChange(Unknown Source)
+	at java.beans.PropertyChangeSupport.fire(PropertyChangeSupport.java:335)
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:327)
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:263)
+	at com.bea.alsb.ui.common.model.ServiceObject.setServiceDefinition(Unknown Source)
+	at com.bea.alsb.ui.common.model.ServiceObject.setServiceDefinition(Unknown Source)
+	at com.bea.alsb.ui.common.model.ServiceObjectFactory.updateFromWsdl(Unknown Source)
+	at com.bea.alsb.ui.resources.service.GeneralConfigComposite.addWsdlToModel(Unknown Source)
+	at com.bea.alsb.ui.resources.service.GeneralConfigComposite$WsdlPortField.isValid(Unknown Source)
+	at com.bea.alsb.ui.common.jface.assist.AssistedField.isValid(Unknown Source)
+	at com.bea.alsb.ui.common.jface.assist.AssistedComposite.handleModify(Unknown Source)
+	at com.bea.alsb.ui.resources.service.GeneralConfigComposite$4.modifyText(Unknown Source)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:179)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1263)
+	at org.eclipse.swt.widgets.Text.setText(Text.java:2175)
+	at org.eclipse.swt.widgets.Text.setText(Text.java:2111)
+	at com.bea.alsb.ui.resources.service.GeneralConfigComposite$5.widgetSelected(Unknown Source)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY com.bea.alsb.ui 4 0 2016-11-17 23:23:22.662
+!MESSAGE Unable to update policy table: null
+!STACK 0
+java.lang.NullPointerException
+	at com.bea.alsb.ui.resources.service.editor.PolicyMasterBlock$PolicyEditorComposite.disableCustomPolicyAreaListeners(Unknown Source)
+	at com.bea.alsb.ui.resources.service.editor.PolicyMasterBlock$PolicyEditorComposite.disableListeners(Unknown Source)
+	at com.bea.alsb.ui.resources.service.editor.PolicyMasterBlock$PolicyEditorComposite.refreshPolicyTable(Unknown Source)
+	at com.bea.alsb.ui.resources.service.editor.PolicyMasterBlock$PolicyEditorComposite.propertyChange(Unknown Source)
+	at java.beans.PropertyChangeSupport.fire(PropertyChangeSupport.java:335)
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:327)
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:263)
+	at com.bea.alsb.ui.common.model.ServiceObject.setWsPolicy(Unknown Source)
+	at com.bea.alsb.ui.common.model.ServiceObject.updateWsPolicy(Unknown Source)
+	at com.bea.alsb.ui.common.model.ServiceObject.setTransport(Unknown Source)
+	at com.bea.alsb.ui.resources.service.TransportComposite.initProtocolCombo(Unknown Source)
+	at com.bea.alsb.ui.resources.service.TransportComposite.initControls(Unknown Source)
+	at com.bea.alsb.ui.resources.service.TransportComposite.performDynamicUpdate(Unknown Source)
+	at com.bea.alsb.ui.resources.service.TransportComposite.propertyChange(Unknown Source)
+	at java.beans.PropertyChangeSupport.fire(PropertyChangeSupport.java:335)
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:327)
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:263)
+	at com.bea.alsb.ui.common.model.ServiceObject.setServiceDefinition(Unknown Source)
+	at com.bea.alsb.ui.common.model.ServiceObject.setServiceDefinition(Unknown Source)
+	at com.bea.alsb.ui.common.model.ServiceObjectFactory.updateFromWsdl(Unknown Source)
+	at com.bea.alsb.ui.resources.service.GeneralConfigComposite.addWsdlToModel(Unknown Source)
+	at com.bea.alsb.ui.resources.service.GeneralConfigComposite$WsdlPortField.isValid(Unknown Source)
+	at com.bea.alsb.ui.common.jface.assist.AssistedField.isValid(Unknown Source)
+	at com.bea.alsb.ui.common.jface.assist.AssistedComposite.handleModify(Unknown Source)
+	at com.bea.alsb.ui.resources.service.GeneralConfigComposite$4.modifyText(Unknown Source)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:179)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1263)
+	at org.eclipse.swt.widgets.Text.setText(Text.java:2175)
+	at org.eclipse.swt.widgets.Text.setText(Text.java:2111)
+	at com.bea.alsb.ui.resources.service.GeneralConfigComposite$5.widgetSelected(Unknown Source)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY com.bea.alsb.ui 4 0 2016-11-17 23:23:24.389
+!MESSAGE Unable to update policy table: null
+!STACK 0
+java.lang.NullPointerException
+	at com.bea.alsb.ui.resources.service.editor.PolicyMasterBlock$PolicyEditorComposite.disableCustomPolicyAreaListeners(Unknown Source)
+	at com.bea.alsb.ui.resources.service.editor.PolicyMasterBlock$PolicyEditorComposite.disableListeners(Unknown Source)
+	at com.bea.alsb.ui.resources.service.editor.PolicyMasterBlock$PolicyEditorComposite.refreshPolicyTable(Unknown Source)
+	at com.bea.alsb.ui.resources.service.editor.PolicyMasterBlock$PolicyEditorComposite.propertyChange(Unknown Source)
+	at java.beans.PropertyChangeSupport.fire(PropertyChangeSupport.java:335)
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:327)
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:263)
+	at java.beans.PropertyChangeSupport.firePropertyChange(PropertyChangeSupport.java:283)
+	at com.bea.alsb.ui.common.model.ServiceObject.notifyAllListeners(Unknown Source)
+	at com.bea.alsb.ui.resources.service.GeneralConfigComposite.addWsdlToModel(Unknown Source)
+	at com.bea.alsb.ui.resources.service.GeneralConfigComposite$WsdlPortField.isValid(Unknown Source)
+	at com.bea.alsb.ui.common.jface.assist.AssistedField.isValid(Unknown Source)
+	at com.bea.alsb.ui.common.jface.assist.AssistedComposite.handleModify(Unknown Source)
+	at com.bea.alsb.ui.resources.service.GeneralConfigComposite$4.modifyText(Unknown Source)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:179)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1263)
+	at org.eclipse.swt.widgets.Text.setText(Text.java:2175)
+	at org.eclipse.swt.widgets.Text.setText(Text.java:2111)
+	at com.bea.alsb.ui.resources.service.GeneralConfigComposite$5.widgetSelected(Unknown Source)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:240)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY org.eclipse.osgi 2 1 2016-11-17 23:25:27.810
+!MESSAGE NLS missing message: TableTypeColumnName in: com.bea.alsb.ui.common.editor.FileSynchronizerMessages
+
+!ENTRY org.eclipse.osgi 2 1 2016-11-17 23:26:36.470
+!MESSAGE NLS unused message: primitives in: com.bea.wli.ide.typesystem.ui.messages
+
+!ENTRY org.eclipse.osgi 2 1 2016-11-17 23:26:36.470
+!MESSAGE NLS unused message: classes in: com.bea.wli.ide.typesystem.ui.messages
+
+!ENTRY org.eclipse.ui.workbench 4 0 2016-11-17 23:36:13.371
+!MESSAGE WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+!STACK 0
+java.lang.RuntimeException: WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3586)
+	at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:3159)
+	at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:279)
+	at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:237)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1263)
+	at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:1580)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2823)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2759)
+	at org.eclipse.swt.widgets.Composite.gtk_button_press_event(Composite.java:681)
+	at org.eclipse.swt.widgets.Tree.gtk_button_press_event(Tree.java:1871)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1731)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5016)
+	at org.eclipse.swt.widgets.Tree.windowProc(Tree.java:3530)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4408)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8422)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1245)
+	at org.eclipse.swt.internal.gtk.OS._gtk_enumerate_printers(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_enumerate_printers(OS.java:9324)
+	at org.eclipse.swt.printing.Printer.getPrinterList(Printer.java:98)
+	at org.eclipse.gef.ui.actions.PrintAction.calculateEnabled(PrintAction.java:45)
+	at org.eclipse.gef.ui.actions.WorkbenchPartAction.isEnabled(WorkbenchPartAction.java:123)
+	at org.eclipse.jface.commands.ActionHandler.isEnabled(ActionHandler.java:141)
+	at org.eclipse.core.commands.Command.isEnabled(Command.java:833)
+	at org.eclipse.core.commands.Command.setHandler(Command.java:996)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.updateCommand(HandlerAuthority.java:459)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.processChangedCommands(HandlerAuthority.java:638)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.access$1(HandlerAuthority.java:610)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority$1.propertyChange(HandlerAuthority.java:175)
+	at org.eclipse.ui.internal.services.EvaluationAuthority$1.run(EvaluationAuthority.java:252)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.fireServiceChange(EvaluationAuthority.java:246)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.endSourceChange(EvaluationAuthority.java:197)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.sourceChanged(EvaluationAuthority.java:135)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:311)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:290)
+	at org.eclipse.ui.AbstractSourceProvider.fireSourceChanged(AbstractSourceProvider.java:99)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:401)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:300)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider$1.partDeactivated(WorkbenchSourceProvider.java:247)
+	at org.eclipse.ui.internal.PartListenerList$4.run(PartListenerList.java:117)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList.fireEvent(PartListenerList.java:57)
+	at org.eclipse.ui.internal.PartListenerList.firePartDeactivated(PartListenerList.java:115)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:238)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WWinPartService.updateActivePart(WWinPartService.java:134)
+	at org.eclipse.ui.internal.WWinPartService.access$0(WWinPartService.java:125)
+	at org.eclipse.ui.internal.WWinPartService$WWinListener.partDeactivated(WWinPartService.java:50)
+	at org.eclipse.ui.internal.PartListenerList2$4.run(PartListenerList2.java:115)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList2.fireEvent(PartListenerList2.java:55)
+	at org.eclipse.ui.internal.PartListenerList2.firePartDeactivated(PartListenerList2.java:113)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:242)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WorkbenchPagePartList.fireActivePartChanged(WorkbenchPagePartList.java:57)
+	at org.eclipse.ui.internal.PartList.setActivePart(PartList.java:136)
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3636)
+	at org.eclipse.ui.internal.WorkbenchPage.internalActivate(WorkbenchPage.java:691)
+	at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:663)
+	at org.eclipse.ui.internal.WorkbenchPage.showEditor(WorkbenchPage.java:3031)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditorBatched(WorkbenchPage.java:2931)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2850)
+	at org.eclipse.ui.internal.WorkbenchPage.access$11(WorkbenchPage.java:2842)
+	at org.eclipse.ui.internal.WorkbenchPage$10.run(WorkbenchPage.java:2793)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2789)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2773)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2756)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:683)
+	at org.python.pydev.navigator.actions.PyOpenResourceAction.openFiles(PyOpenResourceAction.java:101)
+	at org.python.pydev.navigator.actions.PyOpenPythonFileAction.run(PyOpenPythonFileAction.java:85)
+	at org.eclipse.ui.actions.RetargetAction.run(RetargetAction.java:221)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$3.open(CommonNavigatorManager.java:185)
+	at org.eclipse.ui.OpenAndLinkWithEditorHelper$InternalListener.open(OpenAndLinkWithEditorHelper.java:48)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:866)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:864)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1152)
+	at org.eclipse.ui.navigator.CommonViewer.handleOpen(CommonViewer.java:462)
+	at org.eclipse.jface.viewers.StructuredViewer$6.handleOpen(StructuredViewer.java:1256)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:275)
+	at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:269)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:309)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:36:50.349
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:36:50.365
+!MESSAGE Module not changed:[OSB Configuration PUC]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:36:50.370
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:36:50.388
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:36:50.389
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:36:50.389
+!MESSAGE Total deleted modules: 0
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:50.511
+!MESSAGE Starting ALSB publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:50.520
+!MESSAGE Added 2 modules out of 2
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.040
+!MESSAGE ALSB Publish Summary: Deleted Projects
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.043
+!MESSAGE No deleted projects to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.076
+!MESSAGE ALSB Publish Summary: Added/Removed/Changed
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.077
+!MESSAGE Will publish: VerificaCreditoInternoToCreditLegacy.xq
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.077
+!MESSAGE Will publish: SerasaProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.077
+!MESSAGE Will publish: ResultadoSerasaToVerificaCreditoExterno.xq
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.077
+!MESSAGE Will publish: verificaWhiteListProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.077
+!MESSAGE Will publish: VerificaWhiteListToParametroWhiteList.xq
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.077
+!MESSAGE Will publish: verificaCreditoExternoProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.077
+!MESSAGE Will publish: ResultadoWhiteListToVerificaWhiteList.xq
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.078
+!MESSAGE Will publish: VerificaCreditoExternoToParametrosSerasa.xq
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.078
+!MESSAGE Will publish: CreditLegacyResponseToCreditoInternoResponse.xq
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.078
+!MESSAGE Will publish: verificaCreditoInternoService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.078
+!MESSAGE Will publish: SerasaBusinessService.biz
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.078
+!MESSAGE No removed resources to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:52.550
+!MESSAGE Beginning import to ALSB server.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:54.777
+!MESSAGE Import to ALSB server completed.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:36:54.777
+!MESSAGE ALSB publish finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:36:54.778
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:36:54.779
+!MESSAGE No Weblogic J2EE module to publish
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:36:54.779
+!MESSAGE Publishing finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:38:40.900
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:38:40.902
+!MESSAGE Module not changed:[OSB Configuration PUC]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:38:40.902
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:38:40.903
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:38:40.903
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:38:40.903
+!MESSAGE Total deleted modules: 0
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:38:40.917
+!MESSAGE Starting ALSB publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:38:40.920
+!MESSAGE Added 2 modules out of 2
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:38:41.517
+!MESSAGE ALSB Publish Summary: Deleted Projects
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:38:41.517
+!MESSAGE No deleted projects to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:38:41.554
+!MESSAGE ALSB Publish Summary: Added/Removed/Changed
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:38:41.554
+!MESSAGE Will publish: verificaCreditoExternoProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:38:41.555
+!MESSAGE No removed resources to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:38:41.679
+!MESSAGE Beginning import to ALSB server.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:38:42.018
+!MESSAGE Import to ALSB server completed.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:38:42.018
+!MESSAGE ALSB publish finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:38:42.019
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:38:42.019
+!MESSAGE No Weblogic J2EE module to publish
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:38:42.019
+!MESSAGE Publishing finished.
+
+!ENTRY org.eclipse.ui.workbench 4 0 2016-11-17 23:40:46.984
+!MESSAGE WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+!STACK 0
+java.lang.RuntimeException: WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3586)
+	at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:3159)
+	at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:279)
+	at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:237)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1263)
+	at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:1580)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2823)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2759)
+	at org.eclipse.swt.widgets.Composite.gtk_button_press_event(Composite.java:681)
+	at org.eclipse.swt.widgets.Tree.gtk_button_press_event(Tree.java:1871)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1731)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5016)
+	at org.eclipse.swt.widgets.Tree.windowProc(Tree.java:3530)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4408)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8422)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1245)
+	at org.eclipse.swt.internal.gtk.OS._gtk_enumerate_printers(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_enumerate_printers(OS.java:9324)
+	at org.eclipse.swt.printing.Printer.getPrinterList(Printer.java:98)
+	at org.eclipse.gef.ui.actions.PrintAction.calculateEnabled(PrintAction.java:45)
+	at org.eclipse.gef.ui.actions.WorkbenchPartAction.isEnabled(WorkbenchPartAction.java:123)
+	at org.eclipse.jface.commands.ActionHandler.isEnabled(ActionHandler.java:141)
+	at org.eclipse.core.commands.Command.isEnabled(Command.java:833)
+	at org.eclipse.core.commands.Command.setHandler(Command.java:996)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.updateCommand(HandlerAuthority.java:459)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.processChangedCommands(HandlerAuthority.java:638)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.access$1(HandlerAuthority.java:610)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority$1.propertyChange(HandlerAuthority.java:175)
+	at org.eclipse.ui.internal.services.EvaluationAuthority$1.run(EvaluationAuthority.java:252)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.fireServiceChange(EvaluationAuthority.java:246)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.endSourceChange(EvaluationAuthority.java:197)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.sourceChanged(EvaluationAuthority.java:135)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:311)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:290)
+	at org.eclipse.ui.AbstractSourceProvider.fireSourceChanged(AbstractSourceProvider.java:99)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:401)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:300)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider$1.partDeactivated(WorkbenchSourceProvider.java:247)
+	at org.eclipse.ui.internal.PartListenerList$4.run(PartListenerList.java:117)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList.fireEvent(PartListenerList.java:57)
+	at org.eclipse.ui.internal.PartListenerList.firePartDeactivated(PartListenerList.java:115)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:238)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WWinPartService.updateActivePart(WWinPartService.java:134)
+	at org.eclipse.ui.internal.WWinPartService.access$0(WWinPartService.java:125)
+	at org.eclipse.ui.internal.WWinPartService$WWinListener.partDeactivated(WWinPartService.java:50)
+	at org.eclipse.ui.internal.PartListenerList2$4.run(PartListenerList2.java:115)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList2.fireEvent(PartListenerList2.java:55)
+	at org.eclipse.ui.internal.PartListenerList2.firePartDeactivated(PartListenerList2.java:113)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:242)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WorkbenchPagePartList.fireActivePartChanged(WorkbenchPagePartList.java:57)
+	at org.eclipse.ui.internal.PartList.setActivePart(PartList.java:136)
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3636)
+	at org.eclipse.ui.internal.WorkbenchPage.internalActivate(WorkbenchPage.java:691)
+	at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:663)
+	at org.eclipse.ui.internal.WorkbenchPage.showEditor(WorkbenchPage.java:3031)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditorBatched(WorkbenchPage.java:2931)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2850)
+	at org.eclipse.ui.internal.WorkbenchPage.access$11(WorkbenchPage.java:2842)
+	at org.eclipse.ui.internal.WorkbenchPage$10.run(WorkbenchPage.java:2793)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2789)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2773)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2756)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:683)
+	at org.python.pydev.navigator.actions.PyOpenResourceAction.openFiles(PyOpenResourceAction.java:101)
+	at org.python.pydev.navigator.actions.PyOpenPythonFileAction.run(PyOpenPythonFileAction.java:85)
+	at org.eclipse.ui.actions.RetargetAction.run(RetargetAction.java:221)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$3.open(CommonNavigatorManager.java:185)
+	at org.eclipse.ui.OpenAndLinkWithEditorHelper$InternalListener.open(OpenAndLinkWithEditorHelper.java:48)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:866)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:864)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1152)
+	at org.eclipse.ui.navigator.CommonViewer.handleOpen(CommonViewer.java:462)
+	at org.eclipse.jface.viewers.StructuredViewer$6.handleOpen(StructuredViewer.java:1256)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:275)
+	at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:269)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:309)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY org.eclipse.ui.workbench 4 0 2016-11-17 23:40:50.259
+!MESSAGE WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+!STACK 0
+java.lang.RuntimeException: WARNING: Prevented recursive attempt to activate part org.eclipse.ui.navigator.ProjectExplorer while still in the middle of activating part com.bea.alsb.ui.editors.proxy
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3586)
+	at org.eclipse.ui.internal.WorkbenchPage.requestActivation(WorkbenchPage.java:3159)
+	at org.eclipse.ui.internal.PartPane.requestActivation(PartPane.java:279)
+	at org.eclipse.ui.internal.PartPane.handleEvent(PartPane.java:237)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1282)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1263)
+	at org.eclipse.swt.widgets.Shell.setActiveControl(Shell.java:1580)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2823)
+	at org.eclipse.swt.widgets.Control.gtk_button_press_event(Control.java:2759)
+	at org.eclipse.swt.widgets.Composite.gtk_button_press_event(Composite.java:681)
+	at org.eclipse.swt.widgets.Tree.gtk_button_press_event(Tree.java:1871)
+	at org.eclipse.swt.widgets.Widget.windowProc(Widget.java:1731)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:5016)
+	at org.eclipse.swt.widgets.Tree.windowProc(Tree.java:3530)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:4408)
+	at org.eclipse.swt.internal.gtk.OS._gtk_main_do_event(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_main_do_event(OS.java:8422)
+	at org.eclipse.swt.widgets.Display.eventProc(Display.java:1245)
+	at org.eclipse.swt.internal.gtk.OS._gtk_enumerate_printers(Native Method)
+	at org.eclipse.swt.internal.gtk.OS.gtk_enumerate_printers(OS.java:9324)
+	at org.eclipse.swt.printing.Printer.getPrinterList(Printer.java:98)
+	at org.eclipse.gef.ui.actions.PrintAction.calculateEnabled(PrintAction.java:45)
+	at org.eclipse.gef.ui.actions.WorkbenchPartAction.isEnabled(WorkbenchPartAction.java:123)
+	at org.eclipse.jface.commands.ActionHandler.isEnabled(ActionHandler.java:141)
+	at org.eclipse.core.commands.Command.isEnabled(Command.java:833)
+	at org.eclipse.core.commands.Command.setHandler(Command.java:996)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.updateCommand(HandlerAuthority.java:459)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.processChangedCommands(HandlerAuthority.java:638)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority.access$1(HandlerAuthority.java:610)
+	at org.eclipse.ui.internal.handlers.HandlerAuthority$1.propertyChange(HandlerAuthority.java:175)
+	at org.eclipse.ui.internal.services.EvaluationAuthority$1.run(EvaluationAuthority.java:252)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.fireServiceChange(EvaluationAuthority.java:246)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.endSourceChange(EvaluationAuthority.java:197)
+	at org.eclipse.ui.internal.services.EvaluationAuthority.sourceChanged(EvaluationAuthority.java:135)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:311)
+	at org.eclipse.ui.internal.services.ExpressionAuthority.sourceChanged(ExpressionAuthority.java:290)
+	at org.eclipse.ui.AbstractSourceProvider.fireSourceChanged(AbstractSourceProvider.java:99)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:401)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider.checkActivePart(WorkbenchSourceProvider.java:300)
+	at org.eclipse.ui.internal.services.WorkbenchSourceProvider$1.partDeactivated(WorkbenchSourceProvider.java:247)
+	at org.eclipse.ui.internal.PartListenerList$4.run(PartListenerList.java:117)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList.fireEvent(PartListenerList.java:57)
+	at org.eclipse.ui.internal.PartListenerList.firePartDeactivated(PartListenerList.java:115)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:238)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WWinPartService.updateActivePart(WWinPartService.java:134)
+	at org.eclipse.ui.internal.WWinPartService.access$0(WWinPartService.java:125)
+	at org.eclipse.ui.internal.WWinPartService$WWinListener.partDeactivated(WWinPartService.java:50)
+	at org.eclipse.ui.internal.PartListenerList2$4.run(PartListenerList2.java:115)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.runtime.Platform.run(Platform.java:888)
+	at org.eclipse.ui.internal.PartListenerList2.fireEvent(PartListenerList2.java:55)
+	at org.eclipse.ui.internal.PartListenerList2.firePartDeactivated(PartListenerList2.java:113)
+	at org.eclipse.ui.internal.PartService.firePartDeactivated(PartService.java:242)
+	at org.eclipse.ui.internal.PartService.setActivePart(PartService.java:300)
+	at org.eclipse.ui.internal.WorkbenchPagePartList.fireActivePartChanged(WorkbenchPagePartList.java:57)
+	at org.eclipse.ui.internal.PartList.setActivePart(PartList.java:136)
+	at org.eclipse.ui.internal.WorkbenchPage.setActivePart(WorkbenchPage.java:3636)
+	at org.eclipse.ui.internal.WorkbenchPage.internalActivate(WorkbenchPage.java:691)
+	at org.eclipse.ui.internal.WorkbenchPage.activate(WorkbenchPage.java:663)
+	at org.eclipse.ui.internal.WorkbenchPage.showEditor(WorkbenchPage.java:3031)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditorBatched(WorkbenchPage.java:2931)
+	at org.eclipse.ui.internal.WorkbenchPage.busyOpenEditor(WorkbenchPage.java:2850)
+	at org.eclipse.ui.internal.WorkbenchPage.access$11(WorkbenchPage.java:2842)
+	at org.eclipse.ui.internal.WorkbenchPage$10.run(WorkbenchPage.java:2793)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2789)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2773)
+	at org.eclipse.ui.internal.WorkbenchPage.openEditor(WorkbenchPage.java:2756)
+	at org.eclipse.ui.ide.IDE.openEditor(IDE.java:683)
+	at org.python.pydev.navigator.actions.PyOpenResourceAction.openFiles(PyOpenResourceAction.java:101)
+	at org.python.pydev.navigator.actions.PyOpenPythonFileAction.run(PyOpenPythonFileAction.java:85)
+	at org.eclipse.ui.actions.RetargetAction.run(RetargetAction.java:221)
+	at org.eclipse.ui.navigator.CommonNavigatorManager$3.open(CommonNavigatorManager.java:185)
+	at org.eclipse.ui.OpenAndLinkWithEditorHelper$InternalListener.open(OpenAndLinkWithEditorHelper.java:48)
+	at org.eclipse.jface.viewers.StructuredViewer$2.run(StructuredViewer.java:866)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:49)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:175)
+	at org.eclipse.jface.viewers.StructuredViewer.fireOpen(StructuredViewer.java:864)
+	at org.eclipse.jface.viewers.StructuredViewer.handleOpen(StructuredViewer.java:1152)
+	at org.eclipse.ui.navigator.CommonViewer.handleOpen(CommonViewer.java:462)
+	at org.eclipse.jface.viewers.StructuredViewer$6.handleOpen(StructuredViewer.java:1256)
+	at org.eclipse.jface.util.OpenStrategy.fireOpenEvent(OpenStrategy.java:275)
+	at org.eclipse.jface.util.OpenStrategy.access$2(OpenStrategy.java:269)
+	at org.eclipse.jface.util.OpenStrategy$1.handleEvent(OpenStrategy.java:309)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1258)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:3588)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3209)
+	at org.eclipse.ui.internal.Workbench.runEventLoop(Workbench.java:2696)
+	at org.eclipse.ui.internal.Workbench.runUI(Workbench.java:2660)
+	at org.eclipse.ui.internal.Workbench.access$4(Workbench.java:2494)
+	at org.eclipse.ui.internal.Workbench$7.run(Workbench.java:674)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:332)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:667)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:149)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:123)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:110)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:79)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:344)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:179)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:606)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:622)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:577)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1410)
+	at org.eclipse.equinox.launcher.Main.main(Main.java:1386)
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:43:36.681
+!MESSAGE Publishing beginning.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:43:36.685
+!MESSAGE Module not changed:[OSB Configuration PUC]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:43:36.686
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:43:36.687
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:43:36.687
+!MESSAGE Found deployable module: com.bea.alsb.core.internal.deployables:OSB Configuration PUC : bea.alsb.container.module
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:43:36.687
+!MESSAGE Total deleted modules: 0
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:36.701
+!MESSAGE Starting ALSB publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:36.702
+!MESSAGE Added 2 modules out of 2
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:37.188
+!MESSAGE ALSB Publish Summary: Deleted Projects
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:37.190
+!MESSAGE No deleted projects to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:37.311
+!MESSAGE ALSB Publish Summary: Added/Removed/Changed
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:37.311
+!MESSAGE Will publish: SerasaProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:37.311
+!MESSAGE Will publish: CreditLegacyProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:37.312
+!MESSAGE Will publish: InternalWhiteListProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:37.312
+!MESSAGE Will publish: verificaWhiteListProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:37.312
+!MESSAGE Will publish: verificaCreditoExternoProxyService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:37.312
+!MESSAGE Will publish: verificaCreditoInternoService.proxy
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:37.312
+!MESSAGE No removed resources to publish.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:37.425
+!MESSAGE Beginning import to ALSB server.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:38.243
+!MESSAGE Import to ALSB server completed.
+
+!ENTRY com.bea.alsb.server.publish 1 0 2016-11-17 23:43:38.243
+!MESSAGE ALSB publish finished.
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:43:38.244
+!MESSAGE Module changed:[OSB Configuration PUC,OSB_Pedro]
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:43:38.244
+!MESSAGE No Weblogic J2EE module to publish
+
+!ENTRY oracle.eclipse.tools.weblogic 1 2000 2016-11-17 23:43:38.244
+!MESSAGE Publishing finished.
