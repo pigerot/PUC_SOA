@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Delete resource &apos;OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/CreditoGeralService.wsdl&apos;" deleteContents="false" description="Delete resource &apos;OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/CreditoGeralService.wsdl&apos;" element1="/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/CreditoGeralService.wsdl" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1480277688030"/>
+</session>

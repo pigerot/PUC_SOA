@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7648f713-5358-4e30-b73c-a703d4193cbd" activeEnvironment="Default" name="PessoaService" resourceRoot="" soapui-version="5.2.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="5187d637-bb31-42d3-8689-da8550b284e9" wsaVersion="NONE" name="PessoaServiceSOAP" type="wsdl" bindingName="{http://pucminas.br/SN/PessoaService/Pedro}PessoaServiceSOAP" soapVersion="1_1" anonymous="optional" definition="file:/home/puc/workspace/OSB_Pedro/EBS/Pessoa/wsdl/PessoaService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/puc/workspace/OSB_Pedro/EBS/Pessoa/wsdl/PessoaService.wsdl"><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/EBS/Pessoa/wsdl/PessoaService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="PessoaService" targetNamespace="http://pucminas.br/SN/PessoaService/Pedro" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://pucminas.br/SN/PessoaService/Pedro" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:pes="http://pucminas.br/SN/Pessoa" xmlns:cab="http://pucminas.br/MC/SOA/Pedro" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://pucminas.br/SN/PessoaService/Pedro">
+      <xsd:import namespace="http://pucminas.br/SN/Pessoa" schemaLocation="../xsd/ParametrosPessoa.xsd"/>
+      <xsd:import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/PucminasFault.xsd"/>
+      <xsd:element name="pucminasFault" type="cab:PucminasFault"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="pucminasFault">
+    <wsdl:part element="tns:pucminasFault" name="fault"/>
+  </wsdl:message>
+  <wsdl:message name="buscaPessoaRequest">
+    <wsdl:part element="pes:parametrosBuscaPessoa" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="buscaPessoaResponse">
+    <wsdl:part element="pes:resultadoBuscaPessoa" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cadastraPessoaRequest">
+    <wsdl:part element="pes:parametrosCadastraPessoa" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="cadastraPessoaResponse">
+    <wsdl:part element="pes:resultadoCadastraPessoa" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="desastivaPessoaRequest">
+    <wsdl:part element="pes:parametrosDesastivaPessoa" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="PessoaService">
+    <wsdl:operation name="buscaPessoa">
+      <wsdl:input message="tns:buscaPessoaRequest"/>
+      <wsdl:output message="tns:buscaPessoaResponse"/>
+      <wsdl:fault name="pucminasFault" message="tns:pucminasFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="cadastraPessoa">
+      <wsdl:input message="tns:cadastraPessoaRequest"/>
+      <wsdl:output message="tns:cadastraPessoaResponse"/>
+      <wsdl:fault name="pucminasFault" message="tns:pucminasFault"/>
+    </wsdl:operation>
+    <wsdl:operation name="desastivaPessoa">
+      <wsdl:input message="tns:desastivaPessoaRequest"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PessoaServiceSOAP" type="tns:PessoaService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="buscaPessoa">
+      <soap:operation soapAction="http://pucminas.br/SN/PessoaService/BuscaPessoa"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="pucminasFault">
+        <soap:fault name="pucminasFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="cadastraPessoa">
+      <soap:operation soapAction="http://pucminas.br/SN/PessoaService/CadastraPessoa"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="pucminasFault">
+        <soap:fault name="pucminasFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="desastivaPessoa">
+      <soap:operation soapAction="http://pucminas.br/SN/PessoaService/DesastivaPessoa"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PessoaService">
+    <wsdl:port binding="tns:PessoaServiceSOAP" name="PessoaServiceSOAP">
+      <soap:address location="http://pucminas.br/SOA/Pessoa"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/EBS/Pessoa/xsd/ParametrosPessoa.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://pucminas.br/SN/Pessoa" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://pucminas.br/SN/Pessoa" xmlns:cab="http://pucminas.br/MC/SOA/Pedro">
+  <import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/Pessoa.xsd"/>
+  <element name="parametrosBuscaPessoa">
+    <complexType>
+      <sequence>
+        <element name="pessoa" type="cab:Pessoa"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="resultadoBuscaPessoa">
+    <complexType>
+      <sequence>
+        <element name="pessoa" type="cab:Pessoa"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="parametrosCadastraPessoa">
+    <complexType>
+      <sequence>
+        <element name="pessoa" type="cab:Pessoa"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="resultadoCadastraPessoa">
+    <complexType>
+      <sequence>
+        <element name="pessoa" type="cab:Pessoa"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="parametrosDesastivaPessoa ">
+    <complexType>
+      <sequence>
+        <element name="pessoa" type="cab:Pessoa"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/ModeloCanonico/MC/Pessoa.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://pucminas.br/MC/SOA/Pedro" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://pucminas.br/MC/SOA/Pedro">
+  <complexType name="Pessoa">
+    <sequence>
+      <element name="id" type="integer"/>
+      <element name="nome" type="string"/>
+      <element name="dataNascimento" type="date"/>
+      <element name="cpf" type="string"/>
+      <element name="telefone" type="integer"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/ModeloCanonico/MC/PucminasFault.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://pucminas.br/MC/SOA/Pedro" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://pucminas.br/MC/SOA/Pedro">
+  <complexType name="PucminasFault">
+    <sequence>
+      <element name="codigo" type="integer"/>
+      <element name="descricao" type="string"/>
+      <element name="detalhe" type="string"/>
+    </sequence>
+  </complexType>
+  <element name="pucminasFault" type="tns:PucminasFault"/>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://pucminas.br/SOA/Pessoa</con:endpoint></con:endpoints><con:operation id="36f8faf1-56cc-4396-9175-a2683cdba7f7" isOneWay="false" action="http://pucminas.br/SN/PessoaService/BuscaPessoa" name="buscaPessoa" bindingOperationName="buscaPessoa" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="5c4da9c3-8fde-4958-b54d-3e6b9c03b005" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/PessoaService/PessoaServiceSOAP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pes="http://pucminas.br/SN/Pessoa" xmlns:ped="http://pucminas.br/MC/SOA/Pedro">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pes:parametrosBuscaPessoa>
+         <pes:pessoa>
+            <ped:id>?</ped:id>
+            <ped:nome>Pedro</ped:nome>
+            <ped:dataNascimento>?</ped:dataNascimento>
+            <ped:cpf>?</ped:cpf>
+            <ped:telefone>?</ped:telefone>
+         </pes:pessoa>
+      </pes:parametrosBuscaPessoa>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://pucminas.br/SN/PessoaService/BuscaPessoa"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="e139feab-bc67-4b1f-8dc3-625a12031148" isOneWay="false" action="http://pucminas.br/SN/PessoaService/CadastraPessoa" name="cadastraPessoa" bindingOperationName="cadastraPessoa" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e6e7d524-a45c-4c4b-8870-444ef282ec4e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/PessoaService/PessoaServiceSOAP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pes="http://pucminas.br/SN/Pessoa" xmlns:ped="http://pucminas.br/MC/SOA/Pedro">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pes:parametrosCadastraPessoa>
+         <pes:pessoa>
+            <ped:id>1</ped:id>
+            <ped:nome>testano</ped:nome>
+         </pes:pessoa>
+      </pes:parametrosCadastraPessoa>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://pucminas.br/SN/PessoaService/CadastraPessoa"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="54245f6b-4a73-4681-9879-fea069d54c22" isOneWay="false" action="http://pucminas.br/SN/PessoaService/DesastivaPessoa" name="desastivaPessoa" bindingOperationName="desastivaPessoa" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a4981f9b-bbbc-4c6c-b72b-c15d3386f442" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8090/PessoaService/PessoaServiceSOAP</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pes="http://pucminas.br/SN/Pessoa" xmlns:ped="http://pucminas.br/MC/SOA/Pedro">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <pes:parametrosDesastivaPessoa>
+         <pes:pessoa>
+            <ped:id>?</ped:id>
+            <ped:nome>?</ped:nome>
+            <ped:dataNascimento>?</ped:dataNascimento>
+            <ped:cpf>?</ped:cpf>
+            <ped:telefone>?</ped:telefone>
+         </pes:pessoa>
+      </pes:parametrosDesastivaPessoa>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://pucminas.br/SN/PessoaService/DesastivaPessoa"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

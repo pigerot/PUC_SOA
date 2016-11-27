@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:schemaEntry xmlns:con="http://www.bea.com/wli/sb/resources/config">
+    <con:schema><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://pucminas.br/SN/Credito" 
+	xmlns:tns="http://pucminas.br/SN/Credito" 
+	elementFormDefault="qualified"
+	xmlns:cab="http://pucminas.br/MC/SOA/Pedro">
+
+	<import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/Pessoa.xsd" />
+	<import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/Credito.xsd" />
+	<import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/MensagemRetorno.xsd" />
+
+	<element name="parametrosScoreCliente">
+		<complexType>
+			<sequence>
+				<element name="pessoa" type="cab:Pessoa" />
+			</sequence>
+		</complexType>
+	</element>
+
+	<element name="resultadoScoreCliente">
+		<complexType>
+			<sequence>
+				<element name="score" type="integer" />
+			</sequence>
+		</complexType>
+	</element>
+
+</schema>]]></con:schema>
+    <con:dependencies>
+        <con:import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/Pessoa.xsd" ref="OSB_Pedro/ModeloCanonico/MC/Pessoa"/>
+        <con:import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/Credito.xsd" ref="OSB_Pedro/ModeloCanonico/MC/Credito"/>
+        <con:import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/MensagemRetorno.xsd" ref="OSB_Pedro/ModeloCanonico/MC/MensagemRetorno"/>
+    </con:dependencies>
+    <con:targetNamespace>http://pucminas.br/SN/Credito</con:targetNamespace>
+</con:schemaEntry>

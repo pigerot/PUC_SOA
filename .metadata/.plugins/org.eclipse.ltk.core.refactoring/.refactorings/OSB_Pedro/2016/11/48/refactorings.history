@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 1 resources to &apos;Business&apos;" description="Move 1 resources to &apos;Business&apos;" destination="ServicosNegocio/Pessoa/Services/Business" element1="ServicosNegocio/CadastraPessoaBusinessService.biz" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1480117022555" updateReferences="true"/>
+</session>

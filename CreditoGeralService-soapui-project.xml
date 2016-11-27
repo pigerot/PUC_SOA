@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="0cd8e12a-e27f-44e6-a37c-f2088e94c0a5" activeEnvironment="Default" name="CreditoGeralService" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="65a8473c-7474-4df9-8871-048be0d6afe9" wsaVersion="NONE" name="CreditoGeralServiceSOAP" type="wsdl" bindingName="{http://pucminas.br/SN/CreditoGeralService/Pedro}CreditoGeralServiceSOAP" soapVersion="1_1" anonymous="optional" definition="file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/CreditoGeralService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/CreditoGeralService.wsdl"><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/ServicosNegocio/Credito/Resources/Interfaces/Contracts/CreditoGeralService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CreditoGeralService" targetNamespace="http://pucminas.br/SN/CreditoGeralService/Pedro" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://pucminas.br/SN/CreditoGeralService/Pedro" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:cre="http://pucminas.br/SN/Credito" xmlns:cab="http://pucminas.br/MC/SOA/Pedro" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://pucminas.br/SN/CreditoGeralService/Pedro">
+      <xsd:import namespace="http://pucminas.br/SN/Credito" schemaLocation="../../../../../EBS/Credito/xsd/ParametrosCreditoGeral.xsd"/>
+      <xsd:import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../../../ModeloCanonico/MC/PucminasFault.xsd"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="pucminasFault">
+    <wsdl:part element="cab:pucminasFault" name="fault"/>
+  </wsdl:message>
+  <wsdl:message name="verificaScoreClienteRequest">
+    <wsdl:part element="cre:parametrosScoreCliente" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="verificaScoreClienteResponse">
+    <wsdl:part element="cre:resultadoScoreCliente" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="CreditoGeralService">
+    <wsdl:operation name="verificaScoreCliente">
+      <wsdl:input message="tns:verificaScoreClienteRequest"/>
+      <wsdl:output message="tns:verificaScoreClienteResponse"/>
+      <wsdl:fault name="pucminasFault" message="tns:pucminasFault"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CreditoGeralServiceSOAP" type="tns:CreditoGeralService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="verificaScoreCliente">
+      <soap:operation soapAction="http://pucminas.br/SN/CreditoGeralService/VerificaScoreCliente"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="pucminasFault">
+        <soap:fault name="pucminasFault" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CreditoGeralService">
+    <wsdl:port binding="tns:CreditoGeralServiceSOAP" name="CreditoGeralServiceSOAP">
+      <soap:address location="http://pucminas.br/SOA/Credito"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/EBS/Credito/xsd/ParametrosCreditoGeral.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://pucminas.br/SN/Credito" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://pucminas.br/SN/Credito" xmlns:cab="http://pucminas.br/MC/SOA/Pedro">
+  <import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/Pessoa.xsd"/>
+  <import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/Credito.xsd"/>
+  <import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/MensagemRetorno.xsd"/>
+  <element name="parametrosScoreCliente">
+    <complexType>
+      <sequence>
+        <element name="pessoa" type="cab:Pessoa"/>
+      </sequence>
+    </complexType>
+  </element>
+  <element name="resultadoScoreCliente">
+    <complexType>
+      <sequence>
+        <element name="score" type="integer"/>
+      </sequence>
+    </complexType>
+  </element>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/ModeloCanonico/MC/Pessoa.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://pucminas.br/MC/SOA/Pedro" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://pucminas.br/MC/SOA/Pedro">
+  <complexType name="Pessoa">
+    <sequence>
+      <element name="id" type="integer"/>
+      <element name="nome" type="string"/>
+      <element name="dataNascimento" type="date"/>
+      <element name="cpf" type="string"/>
+      <element name="telefone" type="integer"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/ModeloCanonico/MC/Credito.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://pucminas.br/MC/SOA/Pedro" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://pucminas.br/MC/SOA/Pedro" xmlns:pes="http://pucminas.br/MC/SOA/Pedro">
+  <include schemaLocation="Pessoa.xsd"/>
+  <complexType name="Credito">
+    <sequence>
+      <element name="pessoa" type="pes:Pessoa"/>
+      <element name="indicaCreditoExterno" type="boolean"/>
+      <element name="indicaCreditoInterno" type="boolean"/>
+      <element name="indicaWhiteList" type="boolean"/>
+      <element name="situacao" type="integer"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/ModeloCanonico/MC/MensagemRetorno.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://pucminas.br/MC/SOA/Pedro" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://pucminas.br/MC/SOA/Pedro">
+  <complexType name="MensagemRetorno">
+    <sequence>
+      <element name="codigo" type="integer"/>
+      <element name="descricao" type="string"/>
+      <element name="isAtivo" type="boolean"/>
+    </sequence>
+  </complexType>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:/home/puc/workspace/OSB_Pedro/ModeloCanonico/MC/PucminasFault.xsd</con:url><con:content><![CDATA[<schema targetNamespace="http://pucminas.br/MC/SOA/Pedro" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://pucminas.br/MC/SOA/Pedro">
+  <complexType name="PucminasFault">
+    <sequence>
+      <element name="codigo" type="integer"/>
+      <element name="descricao" type="string"/>
+      <element name="detalhe" type="string"/>
+    </sequence>
+  </complexType>
+  <element name="pucminasFault" type="tns:PucminasFault"/>
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://pucminas.br/SOA/Credito</con:endpoint></con:endpoints><con:operation id="336694fa-7f16-4602-8e08-527420acf669" isOneWay="false" action="http://pucminas.br/SN/CreditoGeralService/VerificaScoreCliente" name="verificaScoreCliente" bindingOperationName="verificaScoreCliente" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0a0d27c8-f8d3-4de6-a7a4-3a6107858e27" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://pucminas.br/SOA/Credito</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cred="http://pucminas.br/SN/Credito" xmlns:ped="http://pucminas.br/MC/SOA/Pedro">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <cred:parametrosScoreCliente>
+         <cred:pessoa>
+            <ped:id>?</ped:id>
+            <ped:nome>?</ped:nome>
+            <ped:dataNascimento>?</ped:dataNascimento>
+            <ped:cpf>?</ped:cpf>
+            <ped:telefone>?</ped:telefone>
+         </cred:pessoa>
+      </cred:parametrosScoreCliente>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://pucminas.br/SN/CreditoGeralService/VerificaScoreCliente"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

@@ -1,4 +1,5 @@
-#Wed Nov 16 20:14:53 BRST 2016
+#Sun Nov 27 18:55:30 BRST 2016
+pref_state_memento.org.eclipse.debug.ui.DebugVieworg.eclipse.debug.ui.DebugView=<?xml version\="1.0" encoding\="UTF-8"?>\n<DebugViewMemento org.eclipse.debug.ui.BREADCRUMB_DROPDOWN_AUTO_EXPAND\="false"/>
 eclipse.preferences.version=1
 DEBUG.consoleOpenOnOut=false
 preferredDetailPanes=DefaultDetailPane\:DefaultDetailPane|

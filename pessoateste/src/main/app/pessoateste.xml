@@ -1,0 +1,32 @@
+<mule xmlns:mongo="http://www.mulesoft.org/schema/mule/mongo" xmlns:json="http://www.mulesoft.org/schema/mule/json" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:apikit-soap="http://www.mulesoft.org/schema/mule/apikit-soap" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+http://www.mulesoft.org/schema/mule/apikit-soap http://www.mulesoft.org/schema/mule/apikit-soap/current/mule-apikit-soap.xsd
+http://www.mulesoft.org/schema/mule/json http://www.mulesoft.org/schema/mule/json/current/mule-json.xsd
+http://www.mulesoft.org/schema/mule/mongo http://www.mulesoft.org/schema/mule/mongo/current/mule-mongo.xsd">
+  <http:listener-config name="api-httpListenerConfig" host="0.0.0.0" port="8090" doc:name="HTTP Listener Configuration"/>
+  <apikit-soap:config name="/PessoaService/PessoaServiceSOAP/api-config" wsdlUrl="EBS/Pessoa/wsdl/PessoaService.wsdl" serviceName="PessoaService" portName="PessoaServiceSOAP" doc:name="APIkit SOAP: Configuration"/>
+    <mongo:config name="Mongo_DB__Configuration" database="Pessoa" doc:name="Mongo DB: Configuration"/>
+  <flow name="api-main">
+    <http:listener path="/PessoaService/PessoaServiceSOAP" config-ref="api-httpListenerConfig" doc:name="/PessoaService/PessoaServiceSOAP" allowedMethods="POST"/>
+    <apikit-soap:router config-ref="/PessoaService/PessoaServiceSOAP/api-config" doc:name="SOAP Router"/>
+  </flow>
+  <flow name="buscaPessoa:/PessoaService/PessoaServiceSOAP/api-config">
+        <logger message="chamou o outro" level="INFO" doc:name="Logger"/>
+        <json:xml-to-json-transformer doc:name="XML to JSON"/>
+        <logger message="passou" level="INFO" doc:name="Logger"/>
+        <mongo:find-documents config-ref="Mongo_DB__Configuration" collection="Pessoa" doc:name="Mongo DB"/>
+        <logger message="#[payload]" level="INFO" doc:name="Logger"/>
+
+  </flow>
+  <flow name="cadastraPessoa:/PessoaService/PessoaServiceSOAP/api-config">
+        <logger message="Chamouuu" level="INFO" doc:name="Logger"/>
+        <json:xml-to-json-transformer doc:name="XML to JSON"/>
+        <mongo:insert-document config-ref="Mongo_DB__Configuration" collection="Pessoa" doc:name="Mongo DB"/>
+
+  </flow>
+  <flow name="desastivaPessoa:/PessoaService/PessoaServiceSOAP/api-config">
+        <logger message="chamou aind esse" level="INFO" doc:name="Logger"/>
+
+  </flow>
+</mule>
