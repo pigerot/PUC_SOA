@@ -9,6 +9,7 @@
 			<element name="indicaCreditoInterno" type="boolean"/>
 			<element name="indicaWhiteList" type="boolean"/>
 			<element name="situacao" type="integer"/>
+			<element name="score" type="decimal"/>
 		</sequence>	
 	</complexType>
 	

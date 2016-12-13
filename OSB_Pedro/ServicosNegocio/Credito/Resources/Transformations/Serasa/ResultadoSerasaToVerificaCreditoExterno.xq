@@ -13,6 +13,7 @@ declare function xf:ResultadoSerasaToVerificaCreditoExterno($resultadoSerasa1 as
                 <ns0:pessoa>
                     <ns0:cpf>{ data($resultadoSerasa1/ns1:num_documento) }</ns0:cpf>
                 </ns0:pessoa>
+               <ns0:score>{ data($resultadoSerasa1/ns1:valor_restricao) }</ns0:score>
             </ns2:credito>
         </ns2:resultadoVerificaCreditoExterno>
 };
