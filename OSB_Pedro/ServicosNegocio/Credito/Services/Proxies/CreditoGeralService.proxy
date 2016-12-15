@@ -68,24 +68,9 @@
                 <con:actions>
                   <con2:route>
                     <con1:id>_ActionId-8987017699380268630--3cd158de.158a76adfc8.-7fcf</con1:id>
-                    <con2:service ref="OSB_Pedro/ServicosNegocio/Credito/Services/Proxies/Operations/verificaCreditoExternoProxyService" xsi:type="ref:ProxyRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
-                    <con2:operation>verificaCreditoExterno</con2:operation>
-                    <con2:outboundTransform>
-                      <con3:replace varName="body" contents-only="true">
-                        <con1:id>_ActionId-8987017699380268630--3cd158de.158a76adfc8.-7faa</con1:id>
-                        <con3:location>
-                          <con1:xpathText>.</con1:xpathText>
-                        </con3:location>
-                        <con3:expr>
-                          <con1:xqueryTransform>
-                            <con1:resource ref="OSB_Pedro/ServicosNegocio/Credito/Resources/Transformations/CreditoGeral/ParametrosScoreClienteToVerficiaCreditoExterno"/>
-                            <con1:param name="parametrosScoreCliente1">
-                              <con1:path>$body/cred:parametrosScoreCliente</con1:path>
-                            </con1:param>
-                          </con1:xqueryTransform>
-                        </con3:expr>
-                      </con3:replace>
-                    </con2:outboundTransform>
+                    <con2:service ref="OSB_Pedro/ServicosNegocio/Credito/Services/Business/CreditoGeralSplitJoin" xsi:type="ref:BusinessServiceRef" xmlns:ref="http://www.bea.com/wli/sb/reference"/>
+                    <con2:operation>verificaScoreCliente</con2:operation>
+                    <con2:outboundTransform></con2:outboundTransform>
                     <con2:responseTransform/>
                   </con2:route>
                 </con:actions>

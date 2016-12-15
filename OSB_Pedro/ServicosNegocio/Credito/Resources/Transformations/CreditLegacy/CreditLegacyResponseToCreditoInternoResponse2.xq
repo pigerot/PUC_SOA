@@ -4,7 +4,7 @@
 declare namespace ns2 = "http://pucminas.br/SN/Credito";
 declare namespace ns1 = "http://pucminas.br/MC/SOA/Pedro";
 declare namespace ns0 = "http://creditlegacy.com.br/SN/CreditLegacy";
-declare namespace xf = "http://tempuri.org/OSB_Pedro/ServicosNegocio/Credito/Resources/Transformations/CreditLegacy/CreditLegacyResponseToCreditoInternoResponse/";
+declare namespace xf = "http://tempuri.org/OSB_Pedro/ServicosNegocio/Credito/Resources/Transformations/CreditLegacyResponseToCreditoInternoResponse/";
 
 declare function xf:CreditLegacyResponseToCreditoInternoResponse($resultadoCreditLegacy1 as element(ns0:ResultadoCreditLegacy))
     as element(ns2:resultadoVerificaCreditoInterno) {
@@ -13,12 +13,12 @@ declare function xf:CreditLegacyResponseToCreditoInternoResponse($resultadoCredi
                 <ns1:pessoa>
                     <ns1:cpf>{ data($resultadoCreditLegacy1/ns0:cpf) }</ns1:cpf>
                 </ns1:pessoa>
+                {
+                    let $restricoes := $resultadoCreditLegacy1/ns0:restricoes
+                    return
+                        <ns1:score/>
+                }
             </ns2:credito>
-            {
-                let $restricoes := $resultadoCreditLegacy1/ns0:restricoes
-                return
-                    <ns2:restricoes/>
-            }
         </ns2:resultadoVerificaCreditoInterno>
 };
 

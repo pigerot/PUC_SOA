@@ -2,7 +2,7 @@
 <wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
 	xmlns:tns="http://pucminas.br/SN/CreditoGeralService/Pedro" 
 	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
-	xmlns:cre="http://pucminas.br/SN/Credito"
+	xmlns:cre="http://pucminas.br/SN/CreditoGeral"
 	xmlns:cab="http://pucminas.br/MC/SOA/Pedro" 
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
 	name="CreditoGeralService" 
@@ -10,7 +10,7 @@
 
 	<wsdl:types>
 		<xsd:schema targetNamespace="http://pucminas.br/SN/CreditoGeralService/Pedro">
-			<xsd:import namespace="http://pucminas.br/SN/Credito" schemaLocation="../../../../../EBS/Credito/xsd/ParametrosCreditoGeral.xsd" />
+			<xsd:import namespace="http://pucminas.br/SN/CreditoGeral" schemaLocation="../../../../../EBS/Credito/xsd/ParametrosCreditoGeral.xsd" />
 			<xsd:import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../../../ModeloCanonico/MC/PucminasFault.xsd" />
 		</xsd:schema>
 	</wsdl:types>

@@ -8,6 +8,7 @@
 	<import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/Pessoa.xsd" />
 	<import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/Credito.xsd" />
 	<import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/MensagemRetorno.xsd" />
+	<import namespace="http://pucminas.br/MC/SOA/Pedro" schemaLocation="../../../ModeloCanonico/MC/ListaRestricao.xsd" />
 
 
 	<element name="parametrosVerificaCreditoExterno">
@@ -26,7 +27,6 @@
 		</complexType>
 	</element>
 
-
 	<complexType name="parametrosVerificaCreditoInterno">
 		<sequence>
 			<element name="pessoa" type="cab:Pessoa" />
@@ -36,8 +36,11 @@
 	<complexType name="resultadoVerificaCreditoInterno">
 		<sequence>
 			<element name="credito" type="cab:Credito" />
+			<element name="restricoes" type="cab:ListaRestricoes" minOccurs="0" maxOccurs="1"/>
 		</sequence>
 	</complexType>
+
+	
 
 	<element name="parametrosVerificaCreditoInterno" type="tns:parametrosVerificaCreditoInterno"></element>
 	<element name="resultadoVerificaCreditoInterno" type="tns:resultadoVerificaCreditoInterno"></element>

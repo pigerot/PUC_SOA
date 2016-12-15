@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://pucminas.br/MC/SOA/Pedro" xmlns:tns="http://pucminas.br/MC/SOA/Pedro" elementFormDefault="qualified">
+	
+	<complexType name="ListaRestricoes">
+		<sequence>
+			<element name="restricao" type="tns:restricao" minOccurs="1" maxOccurs="unbounded"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="restricao">
+		<sequence>
+			<element name="ds_restricao" type="string" minOccurs="1" maxOccurs="1"/>
+			<element name="valor" type="string" minOccurs="1" maxOccurs="1"/>
+		</sequence>
+	</complexType>
+	
+</schema>
