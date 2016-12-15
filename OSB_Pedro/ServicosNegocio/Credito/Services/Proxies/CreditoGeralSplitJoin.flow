@@ -9,7 +9,7 @@
               xmlns:expr="http://www.bea.com/wli/sb/stages/config"
               xmlns:trf="http://www.bea.com/wli/sb/stages/transform/config"
               xmlns:bind="http://pucminas.br/SN/CreditoGeralService/Pedro" 
-              bea:name="CreditoGeralSplitJoin" xmlns:ns1="http://pucminas.br/SN/CreditoService/Pedro">
+              bea:name="CreditoGeralSplitJoin" xmlns:ns1="http://pucminas.br/SN/CreditoService/Pedro" xmlns:cab="http://pucminas.br/SN/Credito" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://www.bea.com/wli/sb/stages/logging/config" xmlns:ped="http://pucminas.br/MC/SOA/Pedro">
     <bpel:partnerLinks>
         <bpel:partnerLink name="CreditoGeralSplitJoin" partnerLinkType="tns:CreditoGeralSplitJoin"
                           myRole="CreditoGeralSplitJoin">
@@ -51,7 +51,12 @@
     </bpel:variable>
     <bpel:variable name="verificaWhiteListResponse"
     	messageType="ns1:verificaWhiteListResponse">
-    </bpel:variable></bpel:variables>
+    </bpel:variable>
+    <bpel:variable name="scoreExterno" type="xsd:decimal"></bpel:variable>
+    <bpel:variable name="indicaWhiteList" type="xsd:boolean"></bpel:variable>
+    <bpel:variable name="numeroRestricao" type="xsd:integer"></bpel:variable>
+    <bpel:variable name="somaScoreInterno" type="xsd:decimal"></bpel:variable>
+    <bpel:variable name="scoreFinal" type="xsd:decimal"></bpel:variable></bpel:variables>
 
     <bpel:sequence>
         <bpel:receive partnerLink="CreditoGeralSplitJoin" operation="verificaScoreCliente" variable="request" createInstance="yes">
@@ -61,6 +66,13 @@
         </bpel:receive>
         
         
+        <bpel:assign>
+        	<bpel:extensionAssignOperation>
+        		<trf:assign varName="scoreFinal">
+        			<trf:expr>
+        				<expr:xqueryText>0</expr:xqueryText></trf:expr></trf:assign>
+        	</bpel:extensionAssignOperation>
+        </bpel:assign>
         <bpel:flow>
         	<bpel:scope>
         		
@@ -87,7 +99,13 @@
         				<rescon:invokeInfo>
         					<rescon:service isProxy="true"
         						ref="OSB_Pedro/ServicosNegocio/Credito/Services/Proxies/Operations/verificaCreditoExternoProxyService"></rescon:service></rescon:invokeInfo></bpel:invoke>
-        			</bpel:sequence>
+        			<bpel:assign>
+        				<bpel:extensionAssignOperation>
+        					<trf:assign varName="scoreExterno">
+        						<trf:expr>
+        							<expr:xqueryText>$verificaCreditoExternoResponse.parameters//*:score/text()</expr:xqueryText></trf:expr></trf:assign>
+        				</bpel:extensionAssignOperation>
+        			</bpel:assign></bpel:sequence>
         	</bpel:scope>
         	
         
@@ -107,7 +125,18 @@
 			</bpel:assign>
 			<bpel:invoke operation="verificaCreditoInterno" partnerLink="verificaCreditoInternoService" inputVariable="verificaCreditoInternoRequest" outputVariable="verificaCreditoInternoResponse">
 				<rescon:invokeInfo>
-					<rescon:service isProxy="true" ref="OSB_Pedro/ServicosNegocio/Credito/Services/Proxies/Operations/verificaCreditoInternoService"></rescon:service></rescon:invokeInfo></bpel:invoke></bpel:sequence>
+					<rescon:service isProxy="true" ref="OSB_Pedro/ServicosNegocio/Credito/Services/Proxies/Operations/verificaCreditoInternoService"></rescon:service></rescon:invokeInfo></bpel:invoke>
+			<bpel:assign>
+				<bpel:extensionAssignOperation>
+					<trf:assign varName="numeroRestricao">
+						<trf:expr>
+							<expr:xqueryText>fn:count($verificaCreditoInternoResponse.parameters//*:restricao)</expr:xqueryText></trf:expr></trf:assign>
+				</bpel:extensionAssignOperation>
+			<bpel:extensionAssignOperation>
+		<trf:assign varName="somaScoreInterno">
+			<trf:expr>
+				<expr:xqueryText>fn:sum($verificaCreditoInternoResponse.parameters//*:valor)</expr:xqueryText></trf:expr></trf:assign>
+			</bpel:extensionAssignOperation></bpel:assign></bpel:sequence>
         </bpel:scope>
         <bpel:scope>
         	<bpel:sequence>
@@ -122,14 +151,102 @@
         		</bpel:assign>
         		<bpel:invoke operation="verificaWhiteList" partnerLink="verificaWhiteListProxyService" inputVariable="verificaWhiteListRequest" outputVariable="verificaWhiteListResponse">
         			<rescon:invokeInfo>
-        				<rescon:service isProxy="true" ref="OSB_Pedro/ServicosNegocio/Credito/Services/Proxies/Operations/verificaWhiteListProxyService"></rescon:service></rescon:invokeInfo></bpel:invoke></bpel:sequence>
+        				<rescon:service isProxy="true" ref="OSB_Pedro/ServicosNegocio/Credito/Services/Proxies/Operations/verificaWhiteListProxyService"></rescon:service></rescon:invokeInfo></bpel:invoke>
+        		<bpel:assign>
+        			<bpel:extensionAssignOperation>
+        				<trf:assign varName="indicaWhiteList">
+        					<trf:expr>
+        						<expr:xqueryText>$verificaWhiteListResponse.parameters//*:isAtivo</expr:xqueryText></trf:expr></trf:assign>
+        			</bpel:extensionAssignOperation>
+        		</bpel:assign></bpel:sequence>
         </bpel:scope></bpel:flow>
         
+        <bpel:if>
+        	<bpel:condition>$scoreExterno &gt; 400</bpel:condition>
+        	<bpel:sequence>
+        		<bpel:empty></bpel:empty>
+        	<bpel:assign>
+		<bpel:extensionAssignOperation>
+		<trf:assign varName="scoreFinal">
+			<trf:expr>
+				<expr:xqueryText>xs:integer($scoreFinal) + 200</expr:xqueryText></trf:expr></trf:assign>
+		</bpel:extensionAssignOperation>
+	<bpel:extensionAssignOperation>
+			<ns0:log>
+				<ns0:expr>
+					<expr:xqueryText>$scoreFinal</expr:xqueryText></ns0:expr>
+				<ns0:message></ns0:message></ns0:log>
+		</bpel:extensionAssignOperation>
+        	</bpel:assign></bpel:sequence>
+        	
+        	
+        	
+        	<bpel:else>
+        		<bpel:sequence>
+        			<bpel:empty></bpel:empty>
+        		</bpel:sequence>
+        	</bpel:else>
+        </bpel:if>
+        <bpel:if>
+        	<bpel:condition>$numeroRestricao &lt;= 3 and $somaScoreInterno &lt; 200</bpel:condition>
+        	<bpel:sequence>
+        		<bpel:empty></bpel:empty>
+        	<bpel:assign>
+		<bpel:extensionAssignOperation>
+			<trf:assign varName="scoreFinal">
+				<trf:expr>
+					<expr:xqueryText>xs:integer($scoreFinal) + 500</expr:xqueryText></trf:expr></trf:assign></bpel:extensionAssignOperation>
+		<bpel:extensionAssignOperation>
+			<ns0:log>
+				<ns0:expr>
+					<expr:xqueryText>$scoreFinal</expr:xqueryText></ns0:expr>
+				<ns0:message></ns0:message></ns0:log></bpel:extensionAssignOperation></bpel:assign></bpel:sequence>
+        	<bpel:elseif>
+        		<bpel:condition>$somaScoreInterno &gt; 200 and $indicaWhiteList</bpel:condition>
+        		<bpel:sequence>
+        			<bpel:empty></bpel:empty>
+        		<bpel:assign>
+		<bpel:extensionAssignOperation>
+			<trf:assign varName="scoreFinal">
+				<trf:expr>
+					<expr:xqueryText>xs:integer($scoreFinal) + 900</expr:xqueryText></trf:expr></trf:assign></bpel:extensionAssignOperation>
+		<bpel:extensionAssignOperation>
+			<ns0:log>
+				<ns0:expr>
+					<expr:xqueryText>$scoreFinal</expr:xqueryText></ns0:expr>
+				<ns0:message></ns0:message></ns0:log></bpel:extensionAssignOperation></bpel:assign></bpel:sequence>
+        	</bpel:elseif>
+        	<bpel:else>
+        		<bpel:sequence>
+        			<bpel:empty></bpel:empty>
+        		</bpel:sequence>
+        	</bpel:else>
+        </bpel:if>
+        <bpel:if>
+        	<bpel:condition>$numeroRestricao &gt; 4</bpel:condition>
+        	<bpel:sequence>
+        		<bpel:empty></bpel:empty>
+        	<bpel:assign>
+		<bpel:extensionAssignOperation>
+			<trf:assign varName="scoreFinal">
+				<trf:expr>
+					<expr:xqueryText>0</expr:xqueryText></trf:expr></trf:assign></bpel:extensionAssignOperation>
+		<bpel:extensionAssignOperation>
+			<ns0:log>
+				<ns0:expr>
+					<expr:xqueryText>$scoreFinal</expr:xqueryText></ns0:expr>
+				<ns0:message></ns0:message></ns0:log></bpel:extensionAssignOperation></bpel:assign></bpel:sequence>
+        	<bpel:else>
+        		<bpel:sequence>
+        			<bpel:empty></bpel:empty>
+        		</bpel:sequence>
+        	</bpel:else>
+        </bpel:if>
         <bpel:assign>
         	<bpel:extensionAssignOperation>
         		<trf:assign varName="response.parameters">
         			<trf:expr>
-        				<expr:xqueryText>$verificaCreditoInternoResponse.parameters</expr:xqueryText></trf:expr></trf:assign></bpel:extensionAssignOperation></bpel:assign>
+        				<expr:xqueryText>$scoreFinal</expr:xqueryText></trf:expr></trf:assign></bpel:extensionAssignOperation></bpel:assign>
         <bpel:reply partnerLink="CreditoGeralSplitJoin" operation="verificaScoreCliente" variable="response"></bpel:reply>
     </bpel:sequence>
 </bpel:process>

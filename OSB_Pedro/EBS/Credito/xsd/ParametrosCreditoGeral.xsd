@@ -20,7 +20,7 @@
 	<element name="resultadoScoreCliente">
 		<complexType>
 			<sequence>
-				<element name="score" type="integer" />
+				<element name="score" type="decimal" />
 			</sequence>
 		</complexType>
 	</element>
